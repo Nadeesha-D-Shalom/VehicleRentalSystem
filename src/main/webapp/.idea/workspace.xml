@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1dc868ff-11e1-405c-9c5c-5d6660f41ec0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarRentalProject/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Backend/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Backend/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Backend/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Project_Backend/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Backend/Project_Backend.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Backend/src/UserManagement/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Project_Backend/src/UserManagement/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/Login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/Registation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/about.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/blog.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/car.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/css/responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/css/style.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/css/style.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/about-img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/b-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/b-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/b-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/book-car.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/c-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/c-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/c-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/call.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/client-1-white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/client-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/client-2-white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/client-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/contact-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/fb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/hero-img.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/insta.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/left-angle-grey.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/left-angle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/linkedin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/location.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/mail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/next.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/prev.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/r-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/r-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/r-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/r-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/r-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/r-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/right-angle-grey.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/right-angle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/twitter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/u-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/u-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/u-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/u-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/images/us-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/js/custom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/js/jquery-3.4.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/Project_Front-End/RentC/styleReg.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_Front-End/RentC" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RentC/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RentC/Registation.html" beforeDir="false" afterPath="$PROJECT_DIR$/RentC/Registation.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="2wanrQ1xOn3jT6QwfoonIqLdN3t" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/SLIIT_Bacholer/_1_Year_sem2/OOP_FinalProject/CarRentalWebSite/Project_Backend",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1dc868ff-11e1-405c-9c5c-5d6660f41ec0" name="Changes" comment="" />
+      <created>1746288750706</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1746288750706</updated>
+      <workItem from="1746288751874" duration="12000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

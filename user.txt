@@ -1,0 +1,6 @@
+U001,qazwsx,qazwsx,070795588
+U002,nadeesha,qazwsx,0755516588
+U003,qazwsx1,qazwsxe,565626
+U004,nadeesha11,qweasd,0707328800
+U005,user,user,0707088990
+U006,wertyuio,wertyu,0789995588
