@@ -36,3 +36,5 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+apache-tomcat-10.1.40-windows-x64/
