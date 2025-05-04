@@ -68,9 +68,10 @@
           <div id="myNav" class="overlay">
             <div class="overlay-content">
               <a href="dashboard.jsp">Dashboard</a>
-              <a href="#">About</a>
-              <a href="#">Cars</a>
-              <a href="#">Blog</a>
+              <a href="about.html">About</a>
+              <a></a>
+              <a href="vehicleRegistation.html">Add New Vehicle</a>
+
             </div>
           </div>
         </div>

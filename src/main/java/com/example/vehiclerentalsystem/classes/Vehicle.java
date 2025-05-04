@@ -19,9 +19,7 @@ public class Vehicle {
     private String description;
     private String photoFileName;
 
-    public Vehicle(String brand, String model, double price, int year, String vehicleType, String transmission,
-                   String fuelType, String engine, int doors, String color, int passengers, int luggage,
-                   String ac, double mileage, String regNumber, String description, String photoFileName) {
+    public Vehicle() {
         this.brand = brand;
         this.model = model;
         this.price = price;
@@ -176,6 +174,4 @@ public class Vehicle {
     public void setPhotoFileName(String photoFileName) {
         this.photoFileName = photoFileName;
     }
-
-    // Add Getters and Setters here if needed
 }

@@ -1,0 +1,3 @@
+toyota,vezel,3000.0,2022,SUV,Automatic,Hybrid,2250,4,red,5,3,Yes,5524446.0,25455544,good,1.jpg
+toyota,vezel,3000.0,2022,SUV,Automatic,Hybrid,2250,4,red,5,3,Yes,5524446.0,25455544,good,1.jpg
+toyota,KDH,3000.0,2022,SUV,Automatic,Hybrid,2250,4,red,5,3,Yes,5524446.0,25455544,my vehicle 2 ,5.jpg
