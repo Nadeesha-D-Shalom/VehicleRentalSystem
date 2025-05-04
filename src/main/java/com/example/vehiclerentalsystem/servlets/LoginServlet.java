@@ -2,12 +2,12 @@ package com.example.vehiclerentalsystem.servlets;
 
 import com.example.vehiclerentalsystem.classes.User;
 import com.example.vehiclerentalsystem.management.UserManagement;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
@@ -20,15 +20,16 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        User user = userManagement.validateUser(username, password);
+        List<User> users = userManagement.getAllUsers();
+        boolean validUser = users.stream()
+                .anyMatch(u -> u.getUsername().equals(username) && u.getPassword().equals(password));
 
-        if (user != null) {
+        if (validUser) {
             HttpSession session = request.getSession();
             session.setAttribute("username", username);
             response.sendRedirect("dashboard.jsp");
         } else {
-            request.setAttribute("errorMessage", "Invalid username or password.");
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+            response.sendRedirect("login.jsp?error=1");
         }
     }
 }

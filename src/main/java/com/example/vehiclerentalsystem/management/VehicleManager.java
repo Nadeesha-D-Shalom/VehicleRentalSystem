@@ -4,82 +4,45 @@ import com.example.vehiclerentalsystem.classes.Vehicle;
 
 import java.io.*;
 import java.util.LinkedList;
+import java.util.List;
 
 public class VehicleManager {
 
-    private static final String FILE_PATH = "vehicle.txt";
-    private static LinkedList<Vehicle> vehicleList = new LinkedList<>();
+    private static final String FILE_PATH = "E:/SLIIT_Bacholer/_1_Year_sem2/OOP_FinalGoupProject/VehicleRentalSystem/vehicle.txt";
+    private static final LinkedList<Vehicle> vehicleList = new LinkedList<>();
 
-    // Add new vehicle to list and save to file
+    // Add and save
     public static void addVehicle(Vehicle vehicle) {
         vehicleList.add(vehicle);
         saveToFile(vehicle);
     }
 
-    // Save vehicle to file (append mode)
+    // Save one vehicle to file
     private static void saveToFile(Vehicle vehicle) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH, true))) {
-            writer.write(
-                    vehicle.getBrand() + "," +
-                            vehicle.getModel() + "," +
-                            vehicle.getPrice() + "," +
-                            vehicle.getYear() + "," +
-                            vehicle.getVehicleType() + "," +
-                            vehicle.getTransmission() + "," +
-                            vehicle.getFuelType() + "," +
-                            vehicle.getEngine() + "," +
-                            vehicle.getDoors() + "," +
-                            vehicle.getColor() + "," +
-                            vehicle.getPassengers() + "," +
-                            vehicle.getLuggage() + "," +
-                            vehicle.getAc() + "," +
-                            vehicle.getMileage() + "," +
-                            vehicle.getRegNumber() + "," +
-                            vehicle.getDescription() + "," +
-                            vehicle.getPhotoFileName()
-            );
+            writer.write(vehicle.toString());
             writer.newLine();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Error writing vehicle to file: " + e.getMessage());
         }
     }
 
-    // Load all vehicles from file to LinkedList (optional)
-    public static void loadVehicles() {
-        vehicleList.clear();
+    // Load all vehicles from file
+    public static List<Vehicle> loadAllVehicles() {
+        LinkedList<Vehicle> list = new LinkedList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(FILE_PATH))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                String[] parts = line.split(",");
-                if (parts.length >= 17) {
-                    Vehicle vehicle = new Vehicle();
-                    vehicle.setBrand(parts[0]);
-                    vehicle.setModel(parts[1]);
-                    vehicle.setPrice(Double.parseDouble(parts[2]));
-                    vehicle.setYear(Integer.parseInt(parts[3]));
-                    vehicle.setVehicleType(parts[4]);
-                    vehicle.setTransmission(parts[5]);
-                    vehicle.setFuelType(parts[6]);
-                    vehicle.setEngine(parts[7]);
-                    vehicle.setDoors(Integer.parseInt(parts[8]));
-                    vehicle.setColor(parts[9]);
-                    vehicle.setPassengers(Integer.parseInt(parts[10]));
-                    vehicle.setLuggage(Integer.parseInt(parts[11]));
-                    vehicle.setAc(parts[12]);
-                    vehicle.setMileage(Double.parseDouble(parts[13]));
-                    vehicle.setRegNumber(parts[14]);
-                    vehicle.setDescription(parts[15]);
-                    vehicle.setPhotoFileName(parts[16]);
-
-                    vehicleList.add(vehicle);
-                }
+                Vehicle vehicle = Vehicle.fromString(line);
+                if (vehicle != null) list.add(vehicle);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Error reading vehicle list: " + e.getMessage());
         }
+        return list;
     }
 
-    public static LinkedList<Vehicle> getAllVehicles() {
-        return vehicleList;
+    public static List<Vehicle> getAllVehicles() {
+        return new LinkedList<>(vehicleList); // shallow copy
     }
 }

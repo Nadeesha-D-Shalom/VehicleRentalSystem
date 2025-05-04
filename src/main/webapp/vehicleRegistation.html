@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register Vehicle</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+
+    .form-container {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    form input, form select, form textarea, form button {
+      width: 100%;
+      margin: 10px 0;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    form button {
+      background-color: #007BFF;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #0056b3;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    .alert {
+      text-align: center;
+      color: green;
+      font-weight: bold;
+    }
+
+    .error {
+      text-align: center;
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-container">
+  <h2>Register New Vehicle</h2>
+
+  <!-- Alerts -->
+  <div id="message"></div>
+
+  <form action="registerVehicle" method="post">
+
+    <input type="text" name="brand" placeholder="Brand" required>
+    <input type="text" name="model" placeholder="Model" required>
+    <input type="number" name="price" placeholder="Price per Day ($)" required>
+    <input type="number" name="year" placeholder="Year of Manufacture" required>
+
+    <select name="vehicleType" required>
+      <option value="">Select Vehicle Type</option>
+      <option>SUV</option>
+      <option>Sedan</option>
+      <option>Hatchback</option>
+      <option>Convertible</option>
+      <option>Van</option>
+      <option>Truck</option>
+    </select>
+
+    <select name="transmission" required>
+      <option value="">Transmission Type</option>
+      <option>Automatic</option>
+      <option>Manual</option>
+    </select>
+
+    <select name="fuelType" required>
+      <option value="">Fuel Type</option>
+      <option>Petrol</option>
+      <option>Diesel</option>
+      <option>Electric</option>
+      <option>Hybrid</option>
+    </select>
+
+    <input type="text" name="engine" placeholder="Engine Capacity" required>
+    <input type="number" name="doors" placeholder="Number of Doors" required>
+    <input type="text" name="color" placeholder="Color" required>
+    <input type="number" name="passengers" placeholder="Passenger Capacity" required>
+    <input type="number" name="luggage" placeholder="Luggage Capacity" required>
+
+    <select name="ac" required>
+      <option value="">A/C Available?</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+
+    <input type="number" step="0.1" name="mileage" placeholder="Mileage (km/L)" required>
+    <input type="text" name="regNumber" placeholder="Vehicle Registration Number" required>
+    <textarea name="description" placeholder="Vehicle Description" rows="4" required></textarea>
+
+    <button type="submit">Add Vehicle</button>
+  </form>
+</div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("success") === "1") {
+    document.getElementById("message").innerHTML = "<div class='alert'>✅ Vehicle added successfully!</div>";
+  } else if (params.get("error")) {
+    document.getElementById("message").innerHTML = "<div class='error'>❌ Failed to add vehicle. Check fields.</div>";
+  }
+</script>
+
+</body>
+</html>

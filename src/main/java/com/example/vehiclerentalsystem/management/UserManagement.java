@@ -7,17 +7,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserManagement {
-    private static final String FILE_PATH = "user.txt";
+    // ✅ Change this to your exact working project path
+    private final String filePath = "E:/SLIIT_Bacholer/_1_Year_sem2/OOP_FinalGoupProject/VehicleRentalSystem/user.txt";
+
     private List<User> userList;
 
     public UserManagement() {
         userList = new ArrayList<>();
-        loadUsers(); // automatically load when initialized
+        loadUsers();
     }
 
     public void loadUsers() {
         userList.clear();
-        try (BufferedReader reader = new BufferedReader(new FileReader(FILE_PATH))) {
+        File file = new File(filePath);
+        if (!file.exists()) return;
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 User user = User.fromString(line);
@@ -26,18 +31,18 @@ public class UserManagement {
                 }
             }
         } catch (IOException e) {
-            System.out.println("user.txt not found. Starting with an empty list.");
+            System.out.println("Failed to load users: " + e.getMessage());
         }
     }
 
     public void saveUsers() {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             for (User user : userList) {
                 writer.write(user.toString());
                 writer.newLine();
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Failed to save users: " + e.getMessage());
         }
     }
 
@@ -47,13 +52,6 @@ public class UserManagement {
 
     public void addUser(String username, String password, String phone) {
         userList.add(new User(username, password, phone));
-    }
-
-    public User validateUser(String username, String password) {
-        return userList.stream()
-                .filter(u -> u.getUsername().equalsIgnoreCase(username) && u.getPassword().equals(password))
-                .findFirst()
-                .orElse(null);
     }
 
     public List<User> getAllUsers() {

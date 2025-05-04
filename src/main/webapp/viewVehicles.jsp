@@ -1,39 +1,49 @@
-<%@ page import="java.util.LinkedList" %>
-<%@ page import="com.example.vehiclerentalsystem.classes.Vehicle" %>
-<%@ page import="com.example.vehiclerentalsystem.management.VehicleManager" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.example.vehiclerentalsystem.classes.Vehicle" %>
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>View Vehicles</title>
-  <link rel="stylesheet" href="viweCSS.css">
+  <title>Registered Vehicles</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .vehicle-card {
+      border: 1px solid #ccc;
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
 <body>
 
-<div class="container">
-  <h2 style="text-align:center;">Registered Vehicles</h2>
+<h2>Registered Vehicles</h2>
 
-  <%
-    VehicleManager.loadVehicles();  // Ensure latest data is loaded
-    LinkedList<Vehicle> vehicles = VehicleManager.getAllVehicles();
-
-    for (Vehicle v : vehicles) {
-  %>
-  <div class="car-details card-animate">
-    <img src="<%= request.getContextPath() + "/vehicle_uploads/" + v.getPhotoFileName() %>" alt="Car Image">
-    <div class="car-title"><%= v.getBrand() %> <%= v.getModel() %></div>
-    <div class="price">$<%= v.getPrice() %> <span class="per-day">/ Day</span></div>
-    <div class="features">
-      <span><i class="fas fa-users"></i> <%= v.getPassengers() %> Passengers</span>
-      <span><i class="fas fa-suitcase"></i> <%= v.getLuggage() %> Luggages</span>
-      <span><i class="fas fa-snowflake"></i> <%= v.getAc() %></span>
-    </div>
-    <p><%= v.getDescription() %></p>
-  </div>
-  <% } %>
-
+<%
+  List<Vehicle> vehicleList = (List<Vehicle>) request.getAttribute("vehicleList");
+  if (vehicleList != null && !vehicleList.isEmpty()) {
+    for (Vehicle v : vehicleList) {
+%>
+<div class="vehicle-card">
+  <h3><%= v.getBrand() %> <%= v.getModel() %></h3>
+  <p><strong>Year:</strong> <%= v.getYear() %></p>
+  <p><strong>Price:</strong> $<%= v.getPrice() %></p>
+  <p><strong>Type:</strong> <%= v.getVehicleType() %></p>
+  <p><strong>Transmission:</strong> <%= v.getTransmission() %></p>
+  <p><strong>Fuel:</strong> <%= v.getFuelType() %></p>
+  <p><strong>Engine:</strong> <%= v.getEngine() %></p>
+  <p><strong>Passengers:</strong> <%= v.getPassengers() %> | <strong>Luggage:</strong> <%= v.getLuggage() %></p>
+  <p><strong>AC:</strong> <%= v.getAc() %> | <strong>Mileage:</strong> <%= v.getMileage() %> km</p>
+  <p><strong>Reg No:</strong> <%= v.getRegNumber() %></p>
+  <p><strong>Description:</strong> <%= v.getDescription() %></p>
 </div>
+<%
+  }
+} else {
+%>
+<p>No vehicles registered yet.</p>
+<%
+  }
+%>
 
 </body>
 </html>

@@ -234,15 +234,15 @@
     <div class="book_now">
       <div class="detail-box">
         <h2>
-          Our Best Cars
+          Our Best Cars Click to viwe Vehicles 
         </h2>
         <p>
-          It is a long established fact that a reader will be distracted by the
+          
         </p>
       </div>
       <div class="btn-box">
-        <a href="login.jsp">
-          Book Now
+        <a href="viewVehicles.jsp">
+          View Vehicles
         </a>
       </div>
     </div>
@@ -251,78 +251,7 @@
 
 <!-- end best section -->
 
-<!-- rent section -->
 
-<section class="rent_section layout_padding">
-  <div class="container">
-    <div class="rent_container">
-      <div class="box">
-        <div class="img-box">
-          <img src="images/r-1.png" alt="">
-        </div>
-        <div class="price">
-          <a href="">
-            Rent $200
-          </a>
-        </div>
-      </div>
-      <div class="box">
-        <div class="img-box">
-          <img src="images/r-2.png" alt="">
-        </div>
-        <div class="price">
-          <a href="">
-            Rent $200
-          </a>
-        </div>
-      </div>
-      <div class="box">
-        <div class="img-box">
-          <img src="images/r-3.png" alt="">
-        </div>
-        <div class="price">
-          <a href="">
-            Rent $200
-          </a>
-        </div>
-      </div>
-      <div class="box">
-        <div class="img-box">
-          <img src="images/r-4.png" alt="">
-        </div>
-        <div class="price">
-          <a href="">
-            Rent $200
-          </a>
-        </div>
-      </div>
-      <div class="box">
-        <div class="img-box">
-          <img src="images/r-5.png" alt="">
-        </div>
-        <div class="price">
-          <a href="">
-            Rent $200
-          </a>
-        </div>
-      </div>
-      <div class="box">
-        <div class="img-box">
-          <img src="images/r-6.png" alt="">
-        </div>
-        <div class="price">
-          <a href="">
-            Rent $200
-          </a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- end rent section -->
 
 <!-- blog section -->
 
