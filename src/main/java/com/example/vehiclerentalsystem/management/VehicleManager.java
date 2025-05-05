@@ -42,7 +42,11 @@ public class VehicleManager {
         return list;
     }
 
+    // Return all vehicles including loaded ones
     public static List<Vehicle> getAllVehicles() {
-        return new LinkedList<>(vehicleList); // shallow copy
+        if (vehicleList.isEmpty()) {
+            vehicleList.addAll(loadAllVehicles()); // 🟢 Ensure list is populated from file
+        }
+        return new LinkedList<>(vehicleList); // Return shallow copy
     }
 }

@@ -234,15 +234,15 @@
     <div class="book_now">
       <div class="detail-box">
         <h2>
-          Our Best Cars Click to viwe Vehicles 
+          Our Best Cars Click to view Vehicles
         </h2>
         <p>
           
         </p>
       </div>
       <div class="btn-box">
-        <a href="viewVehicles.jsp">
-          View Vehicles
+        <a href="vehicleList">
+        View Vehicles
         </a>
       </div>
     </div>

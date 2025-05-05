@@ -7,6 +7,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 
 import java.io.IOException;
+import java.util.Random;
 
 @WebServlet("/registerVehicle")
 public class VehicleRegistrationServlet extends HttpServlet {
@@ -28,7 +29,6 @@ public class VehicleRegistrationServlet extends HttpServlet {
             vehicle.setColor(request.getParameter("color"));
             vehicle.setAc(request.getParameter("ac"));
             vehicle.setRegNumber(request.getParameter("regNumber"));
-            vehicle.setDescription(request.getParameter("description"));
 
             // Set and validate numeric values
             vehicle.setPrice(Double.parseDouble(safe(request, "price")));
@@ -38,13 +38,16 @@ public class VehicleRegistrationServlet extends HttpServlet {
             vehicle.setLuggage(Integer.parseInt(safe(request, "luggage")));
             vehicle.setMileage(Double.parseDouble(safe(request, "mileage")));
 
+            int random = new Random().nextInt(6) + 1;
+            vehicle.setImageName(random + ".jpg");
+
             // Save vehicle to file
             VehicleManager.addVehicle(vehicle);
+
             response.sendRedirect("dashboard.jsp");
 
         } catch (Exception e) {
             e.printStackTrace();
-
             response.sendRedirect("vehicleRegistation.html?error=1");
         }
     }
