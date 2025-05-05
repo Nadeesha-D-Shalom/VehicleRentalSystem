@@ -5,6 +5,9 @@ public class User {
     private String password;
     private String phone;
 
+    private String role; // temparary;
+
+    ///  Added a test comment
     public User(String username, String password, String phone) {
         this.username = username;
         this.password = password;
