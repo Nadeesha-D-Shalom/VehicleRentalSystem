@@ -1,13 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.io.*, jakarta.servlet.*, jakarta.servlet.http.*" %>
 <%@ page session="true" %>
-<%
-  String username = (String) session.getAttribute("username");
-  if (username == null) {
-    response.sendRedirect("login.jsp");
-    return;
-  }
-%>
+<% String username=(String) session.getAttribute("username"); if (username==null) {
+  response.sendRedirect("login.jsp"); return; } %>
 <!DOCTYPE html>
 <html>
 
@@ -25,13 +20,16 @@
   <title>Dashboard | Rent C</title>
 
   <!-- slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 
   <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap" rel="stylesheet">
+  <link
+          href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap"
+          rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet" />
@@ -46,14 +44,15 @@
     <div class="container-fluid">
       <nav class="navbar navbar-expand-lg custom_nav-container">
         <a class="navbar-brand" href="dashboard.jsp">
-            <span>
-              Rent C
-            </span>
+                                        <span>
+                                            Rent C
+                                        </span>
         </a>
 
         <div class="navbar-collapse" id="">
           <div class="user_option">
-            <span style="color: white; margin-right: 15px;">Welcome, <%= username %></span>
+                                            <span style="color: white; margin-right: 15px;">Welcome, <%= username %>
+                                                    </span>
             <form action="logout" method="post" style="display:inline;">
               <button type="submit" class="btn btn-danger">Logout</button>
             </form>
@@ -82,64 +81,66 @@
 
 
 
-<!-- slider section -->
-<section class=" slider_section position-relative">
-  <div class="slider_container">
-    <div class="img-box">
-      <img src="images/hero-img.jpg" alt="">
-    </div>
-    <div class="detail_container">
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="detail-box">
-              <h1>
-                Rent Car <br>
-                Experts <br>
-                Service
-              </h1>
-              <a href="">
-                Contact Us
-              </a>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="detail-box">
-              <h1>
-                Rent Car <br>
-                Experts <br>
-                Service
-              </h1>
-              <a href="">
-                Contact Us
-              </a>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="detail-box">
-              <h1>
-                Rent Car <br>
-                Experts <br>
-                Service
-              </h1>
-              <a href="">
-                Contact Us
-              </a>
-            </div>
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="sr-only">Next</span>
-        </a>
+  <!-- slider section -->
+  <section class=" slider_section position-relative">
+    <div class="slider_container">
+      <div class="img-box">
+        <img src="images/hero-img.jpg" alt="">
       </div>
+      <div class="detail_container">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="detail-box">
+                <h1>
+                  Rent Car <br>
+                  Experts <br>
+                  Service
+                </h1>
+                <a href="">
+                  Contact Us
+                </a>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="detail-box">
+                <h1>
+                  Rent Car <br>
+                  Experts <br>
+                  Service
+                </h1>
+                <a href="">
+                  Contact Us
+                </a>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="detail-box">
+                <h1>
+                  Rent Car <br>
+                  Experts <br>
+                  Service
+                </h1>
+                <a href="">
+                  Contact Us
+                </a>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
+             data-slide="prev">
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button"
+             data-slide="next">
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
 
+      </div>
     </div>
-  </div>
-</section>
-<!-- end slider section -->
+  </section>
+  <!-- end slider section -->
 </div>
 
 <!-- car section -->
@@ -164,7 +165,8 @@
             Choose Your Car
           </h5>
           <p>
-            It is a long established fact that a reader will be distracted by the readable content of a page when
+            It is a long established fact that a reader will be distracted by the
+            readable content of a page when
           </p>
         </div>
       </div>
@@ -177,7 +179,8 @@
             Get Your Car
           </h5>
           <p>
-            It is a long established fact that a reader will be distracted by the readable content of a page when
+            It is a long established fact that a reader will be distracted by the
+            readable content of a page when
           </p>
         </div>
       </div>
@@ -190,7 +193,8 @@
             Contact Your Dealer
           </h5>
           <p>
-            It is a long established fact that a reader will be distracted by the readable content of a page when
+            It is a long established fact that a reader will be distracted by the
+            readable content of a page when
           </p>
         </div>
       </div>
@@ -216,7 +220,9 @@
             About Our Cars
           </h2>
           <p>
-            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem
+            It is a long established fact that a reader will be distracted by the
+            readable content of a page when looking at its layout. The point of using
+            Lorem
           </p>
         </div>
       </div>
@@ -237,12 +243,12 @@
           Our Best Cars Click to view Vehicles
         </h2>
         <p>
-          
+
         </p>
       </div>
       <div class="btn-box">
-        <a href="vehicleList">
-        View Vehicles
+        <a href="vehicleListing.jsp" class="btn btn-danger">
+          View Vehicles
         </a>
       </div>
     </div>
@@ -285,7 +291,8 @@
                   Vintage
                 </h5>
                 <p>
-                  It is a long established fact that a reader will be distracted by the readable The point of using Lorem </p>
+                  It is a long established fact that a reader will be distracted
+                  by the readable The point of using Lorem </p>
               </div>
             </div>
           </div>
@@ -304,7 +311,8 @@
                   Steering wheels
                 </h5>
                 <p>
-                  It is a long established fact that a reader will be distracted by the readable The point of using Lorem </p>
+                  It is a long established fact that a reader will be distracted
+                  by the readable The point of using Lorem </p>
               </div>
             </div>
           </div>
@@ -323,7 +331,8 @@
                   Buick Car
                 </h5>
                 <p>
-                  It is a long established fact that a reader will be distracted by the readable The point of using Lorem </p>
+                  It is a long established fact that a reader will be distracted
+                  by the readable The point of using Lorem </p>
               </div>
             </div>
           </div>
@@ -342,7 +351,8 @@
                   Steering wheels
                 </h5>
                 <p>
-                  It is a long established fact that a reader will be distracted by the readable The point of using Lorem </p>
+                  It is a long established fact that a reader will be distracted
+                  by the readable The point of using Lorem </p>
               </div>
             </div>
           </div>
@@ -434,7 +444,11 @@
             <div class="box">
               <div class="detail-box">
                 <p>
-                  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem
+                  It is a long established fact that a reader will be distracted
+                  by the readable content of a page when looking at its layout.
+                  The point of using Lorem It is a long established fact that a
+                  reader will be distracted by the readable content of a page when
+                  looking at its layout. The point of using Lorem
                 </p>
               </div>
               <div class="client_id">
@@ -457,7 +471,11 @@
             <div class="box">
               <div class="detail-box">
                 <p>
-                  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem
+                  It is a long established fact that a reader will be distracted
+                  by the readable content of a page when looking at its layout.
+                  The point of using Lorem It is a long established fact that a
+                  reader will be distracted by the readable content of a page when
+                  looking at its layout. The point of using Lorem
                 </p>
               </div>
               <div class="client_id">
@@ -480,7 +498,11 @@
             <div class="box">
               <div class="detail-box">
                 <p>
-                  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem
+                  It is a long established fact that a reader will be distracted
+                  by the readable content of a page when looking at its layout.
+                  The point of using Lorem It is a long established fact that a
+                  reader will be distracted by the readable content of a page when
+                  looking at its layout. The point of using Lorem
                 </p>
               </div>
               <div class="client_id">
@@ -503,7 +525,11 @@
             <div class="box">
               <div class="detail-box">
                 <p>
-                  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem
+                  It is a long established fact that a reader will be distracted
+                  by the readable content of a page when looking at its layout.
+                  The point of using Lorem It is a long established fact that a
+                  reader will be distracted by the readable content of a page when
+                  looking at its layout. The point of using Lorem
                 </p>
               </div>
               <div class="client_id">
@@ -543,7 +569,7 @@
 
     <div class="contact_items">
 
-      <a >
+      <a>
         <div class="img-box">
           <img src="images/location.png" alt="">
         </div>
@@ -606,10 +632,7 @@
     <div class="map-responsive">
       <iframe
               src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q=SLIIT+Malabe+Campus,Sri+Lanka"
-              width="600"
-              height="300"
-              frameborder="0"
-              style="border:0; width: 100%; height:100%"
+              width="600" height="300" frameborder="0" style="border:0; width: 100%; height:100%"
               allowfullscreen>
       </iframe>
     </div>
@@ -638,7 +661,8 @@
 
 <script src="js/jquery-3.4.1.min.js"></script>
 <script src="js/bootstrap.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script src="js/custom.js"></script>
 
 

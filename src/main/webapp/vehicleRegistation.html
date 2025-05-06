@@ -2,65 +2,124 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Register Vehicle</title>
+  <title>Register Vehicle | RentC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f5f5f5;
-      padding: 20px;
+      font-family: 'Poppins', sans-serif;
+      background: #0f1115;
+      color: #e0e0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-image: radial-gradient(circle at 20% 20%, #1a1c22 20%, transparent 21%),
+      radial-gradient(circle at 80% 80%, #1a1c22 20%, transparent 21%);
+      background-size: 100% 100%;
+      overflow: hidden;
     }
 
     .form-container {
-      max-width: 700px;
-      margin: auto;
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      background: #1a1c22;
+      padding: 40px 35px;
+      border-radius: 20px;
+      width: 850px;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.05), 0 0 80px rgba(0, 128, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      position: relative;
+      animation: slideUp 1s ease;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
     h2 {
       text-align: center;
-      margin-bottom: 20px;
-      color: #333;
+      font-size: 28px;
+      color: #ffffff;
+      margin-bottom: 30px;
     }
 
-    form input, form select, form textarea, form button {
+    form {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    form input, form select, form button {
       width: 100%;
-      margin: 10px 0;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+      padding: 12px 15px;
       font-size: 15px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      background: #23252b;
+      color: #ffffff;
+      transition: 0.3s ease;
+      box-shadow: inset 0 0 0 1px #2f3238;
+    }
+
+    form input:focus, form select:focus {
+      box-shadow: 0 0 0 2px #00bfff;
+      background-color: #282c34;
+    }
+
+    form select {
+      appearance: none;
     }
 
     form button {
-      background-color: #007BFF;
-      color: white;
+      background: linear-gradient(to right, #00bfff, #008cff);
+      color: #ffffff;
       font-weight: bold;
-      border: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      grid-column: span 2;
+      box-shadow: 0 4px 15px rgba(0, 191, 255, 0.2);
     }
 
     form button:hover {
-      background-color: #0056b3;
+      background: linear-gradient(to right, #009edb, #0077cc);
     }
 
-    textarea {
-      resize: none;
+    .alert, .error {
+      grid-column: span 2;
+      text-align: center;
+      font-weight: bold;
+      font-size: 15px;
+      padding: 10px 0;
     }
 
     .alert {
-      text-align: center;
-      color: green;
-      font-weight: bold;
+      color: #00ffcc;
     }
 
     .error {
-      text-align: center;
-      color: red;
-      font-weight: bold;
+      color: #ff4c4c;
+    }
+
+    @media (max-width: 600px) {
+      .form-container {
+        padding: 30px 20px;
+        width: 90%;
+      }
+
+      form {
+        grid-template-columns: 1fr;
+      }
+
+      form button {
+        grid-column: span 1;
+      }
     }
   </style>
 </head>
@@ -68,11 +127,8 @@
 
 <div class="form-container">
   <h2>Register New Vehicle</h2>
-
-  <!-- Alerts -->
-  <div id="message"></div>
-
   <form action="registerVehicle" method="post">
+    <div id="message"></div>
 
     <input type="text" name="brand" placeholder="Brand" required>
     <input type="text" name="model" placeholder="Model" required>
@@ -118,17 +174,17 @@
     <input type="number" step="0.1" name="mileage" placeholder="Mileage (km/L)" required>
     <input type="text" name="regNumber" placeholder="Vehicle Registration Number" required>
 
-
     <button type="submit">Add Vehicle</button>
   </form>
 </div>
 
 <script>
   const params = new URLSearchParams(window.location.search);
+  const messageDiv = document.getElementById("message");
   if (params.get("success") === "1") {
-    document.getElementById("message").innerHTML = "<div class='alert'>✅ Vehicle added successfully!</div>";
+    messageDiv.innerHTML = "<div class='alert'>✅ Vehicle added successfully!</div>";
   } else if (params.get("error")) {
-    document.getElementById("message").innerHTML = "<div class='error'>❌ Failed to add vehicle. Check fields.</div>";
+    messageDiv.innerHTML = "<div class='error'>❌ Failed to add vehicle. Check fields.</div>";
   }
 </script>
 

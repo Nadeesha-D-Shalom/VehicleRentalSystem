@@ -1,2 +1,4 @@
 Toyota;X-trail;SUV;Automatic;Petrol;5200;White;Yes;ES-3599;12000.0;2022;4;5;4;5522000.0;2.jpg
 toyota;Petrol;Hatchback;Manual;Diesel;5200;Black;No;35-7799;15000.0;2004;4;5;8;5999887.0;3.jpg
+Toyota;Vitz;Sedan;Automatic;Petrol;2100;Ash;Yes;CBL-3564;15000.0;2024;4;5;3;8556.0;2.jpg
+Toyota;Vitz;Convertible;Automatic;Petrol;1200;pink;Yes;EP-8899;8000.0;2010;4;5;2;8963741.0;2.jpg
