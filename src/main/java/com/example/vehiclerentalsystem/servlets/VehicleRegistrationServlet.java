@@ -11,15 +11,12 @@ import java.util.Random;
 
 @WebServlet("/registerVehicle")
 public class VehicleRegistrationServlet extends HttpServlet {
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         try {
             Vehicle vehicle = new Vehicle();
-
-            // Set basic string values
             vehicle.setBrand(request.getParameter("brand"));
             vehicle.setModel(request.getParameter("model"));
             vehicle.setVehicleType(request.getParameter("vehicleType"));
@@ -30,7 +27,6 @@ public class VehicleRegistrationServlet extends HttpServlet {
             vehicle.setAc(request.getParameter("ac"));
             vehicle.setRegNumber(request.getParameter("regNumber"));
 
-            // Set and validate numeric values
             vehicle.setPrice(Double.parseDouble(safe(request, "price")));
             vehicle.setYear(Integer.parseInt(safe(request, "year")));
             vehicle.setDoors(Integer.parseInt(safe(request, "doors")));
@@ -41,9 +37,7 @@ public class VehicleRegistrationServlet extends HttpServlet {
             int random = new Random().nextInt(6) + 1;
             vehicle.setImageName(random + ".jpg");
 
-            // Save vehicle to file
             VehicleManager.addVehicle(vehicle);
-
             response.sendRedirect("dashboard.jsp");
 
         } catch (Exception e) {
@@ -52,7 +46,6 @@ public class VehicleRegistrationServlet extends HttpServlet {
         }
     }
 
-    // Helper method for safe value extraction
     private String safe(HttpServletRequest req, String param) throws Exception {
         String value = req.getParameter(param);
         if (value == null || value.trim().isEmpty()) {

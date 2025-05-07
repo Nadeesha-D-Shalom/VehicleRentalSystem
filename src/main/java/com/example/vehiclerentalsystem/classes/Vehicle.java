@@ -6,7 +6,6 @@ public class Vehicle {
     private double price, mileage;
     private int year, doors, passengers, luggage;
 
-    // ------------------ Getters & Setters ------------------
     public String getBrand() { return brand; }
     public void setBrand(String brand) { this.brand = brand; }
 
@@ -55,7 +54,6 @@ public class Vehicle {
     public int getLuggage() { return luggage; }
     public void setLuggage(int luggage) { this.luggage = luggage; }
 
-    // ------------------ Save to file ------------------
     @Override
     public String toString() {
         return brand + ";" + model + ";" + vehicleType + ";" + transmission + ";" + fuelType + ";" +
@@ -63,10 +61,9 @@ public class Vehicle {
                 doors + ";" + passengers + ";" + luggage + ";" + mileage + ";" + imageName;
     }
 
-    // ------------------ Load from file ------------------
     public static Vehicle fromString(String line) {
         try {
-            String[] parts = line.split(";", -1); // Prevents trimming trailing empty parts
+            String[] parts = line.split(";", -1);
             if (parts.length != 16) {
                 System.out.println("Skipping invalid line (wrong field count): " + line);
                 return null;

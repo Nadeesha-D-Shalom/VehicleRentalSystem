@@ -14,8 +14,8 @@ public class VehicleListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
         List<Vehicle> vehicles = VehicleManager.getAllVehicles();
+        System.out.println("Vehicles loaded: " + vehicles.size());
         request.setAttribute("vehicleList", vehicles);
         request.getRequestDispatcher("vehicleListing.jsp").forward(request, response);
     }
