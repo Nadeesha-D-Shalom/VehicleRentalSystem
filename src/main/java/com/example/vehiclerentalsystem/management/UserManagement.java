@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserManagement {
-    // ✅ Change this to your exact working project path
+    // Change this to your exact working project path - your working path
     private final String filePath = "E:/SLIIT_Bacholer/_1_Year_sem2/OOP_FinalGoupProject/VehicleRentalSystem/user.txt";
 
     private List<User> userList;

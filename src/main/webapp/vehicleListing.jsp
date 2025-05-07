@@ -16,7 +16,7 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to right, #e0f7fa, #e8f5e9);
+            background: linear-gradient(to right, rgba(113, 158, 255, 0.6), rgba(92, 104, 237, 0.85));
             margin: 0;
             padding: 30px 10px;
             overflow-x: hidden;

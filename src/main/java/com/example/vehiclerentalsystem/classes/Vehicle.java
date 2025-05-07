@@ -5,6 +5,11 @@ public class Vehicle {
     private String color, ac, regNumber, imageName;
     private double price, mileage;
     private int year, doors, passengers, luggage;
+    private String description; // Add this if it's not there already
+
+    public String getDescription() {
+        return description;
+    }
 
     public String getBrand() { return brand; }
     public void setBrand(String brand) { this.brand = brand; }

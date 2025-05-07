@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class VehicleManager {
-    private static final String FILE_PATH = "E:/SLIIT_Bacholer/_1_Year_sem2/OOP_FinalGoupProject/vehicle.txt";
+    private static final String FILE_PATH = "E:/SLIIT_Bacholer/_1_Year_sem2/OOP_FinalGoupProject/VehicleRentalSystem/vehicle.txt";
     private static final LinkedList<Vehicle> vehicleList = new LinkedList<>();
 
     public static void addVehicle(Vehicle vehicle) {
