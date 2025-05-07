@@ -1,124 +1,151 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Register | RentC</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Register Vehicle | RentC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            margin: 0;
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to right, #74ebd5, #acb6e5);
+            background: url('images/logWall.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
             display: flex;
-            justify-content: center;
             align-items: center;
-            height: 100vh;
+            justify-content: center;
+            min-height: 100vh;
         }
 
-        .main_div {
-            background-color: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            width: 350px;
-            animation: fadeIn 1s ease-in-out;
+        .form-container {
+            background: rgba(0, 0, 0, 0.75);
+            padding: 30px;
+            border-radius: 10px;
+            width: 450px;
         }
 
-        @keyframes fadeIn {
-            from {opacity: 0; transform: translateY(20px);}
-            to {opacity: 1; transform: translateY(0);}
-        }
-
-        .title {
-            font-size: 28px;
-            font-weight: 700;
-            color: #333;
+        h2 {
             text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .input_box {
+            font-size: 24px;
             margin-bottom: 20px;
         }
 
-        .input_box input {
-            width: 100%;
-            padding: 12px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            transition: 0.3s;
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input, select, button {
+            padding: 10px;
             font-size: 14px;
+            border-radius: 6px;
+            border: none;
+            margin-bottom: 12px;
         }
 
-        .input_box input:focus {
-            border-color: #74ebd5;
-            outline: none;
-            box-shadow: 0 0 5px rgba(116, 235, 213, 0.5);
+        input, select {
+            background: rgba(152, 92, 226, 0.8);
+            color: #000;
         }
 
-        .input_box.button input {
-            background-color: #74ebd5;
+        button {
+            background-color: #007bff;
             color: white;
             font-weight: bold;
             cursor: pointer;
-            border: none;
         }
 
-        .input_box.button input:hover {
-            background-color: #56c7ba;
+        button:hover {
+            background-color: #0056b3;
         }
 
-        .sign_up {
+        .alert, .error {
             text-align: center;
-            margin-top: 10px;
+            font-weight: bold;
+            font-size: 14px;
+            padding: 8px 0;
         }
 
-        .sign_up a {
-            color: #3333cc;
-            text-decoration: none;
-        }
-
-        .sign_up a:hover {
-            text-decoration: underline;
+        .alert {
+            color: #00ffcc;
         }
 
         .error {
-            color: red;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 15px;
+            color: #ff4c4c;
+        }
+
+        @media (max-width: 500px) {
+            .form-container {
+                width: 90%;
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
-<div class="main_div">
-    <div class="title">Create Account</div>
 
-    <%
-        String error = (String) request.getAttribute("errorMessage");
-        if (error != null) {
-    %>
-    <div class="error"><%= error %></div>
-    <% } %>
+<div class="form-container">
+    <h2>Register New Vehicle</h2>
 
-    <form action="register" method="post">
-        <div class="input_box">
-            <input type="text" name="username" placeholder="Username" required>
-        </div>
-        <div class="input_box">
-            <input type="password" name="password" placeholder="Password" required>
-        </div>
-        <div class="input_box">
-            <input type="text" name="phone" placeholder="Phone Number" required>
-        </div>
-        <div class="input_box button">
-            <input type="submit" value="Register">
-        </div>
-        <div class="sign_up">
-            Already a member? <a href="login.jsp">Login now</a>
-        </div>
+    <form action="registerVehicle" method="post">
+        <div id="message"></div>
+
+        <input type="text" name="brand" placeholder="Brand" required>
+        <input type="text" name="model" placeholder="Model" required>
+        <input type="number" name="price" placeholder="Price per Day ($)" required>
+        <input type="number" name="year" placeholder="Year of Manufacture" required>
+
+        <select name="vehicleType" required>
+            <option value="">Select Vehicle Type</option>
+            <option>SUV</option>
+            <option>Sedan</option>
+            <option>Hatchback</option>
+            <option>Convertible</option>
+            <option>Van</option>
+            <option>Truck</option>
+        </select>
+
+        <select name="transmission" required>
+            <option value="">Transmission Type</option>
+            <option>Automatic</option>
+            <option>Manual</option>
+        </select>
+
+        <select name="fuelType" required>
+            <option value="">Fuel Type</option>
+            <option>Petrol</option>
+            <option>Diesel</option>
+            <option>Electric</option>
+            <option>Hybrid</option>
+        </select>
+
+        <input type="text" name="engine" placeholder="Engine Capacity" required>
+        <input type="number" name="doors" placeholder="Number of Doors" required>
+        <input type="text" name="color" placeholder="Color" required>
+        <input type="number" name="passengers" placeholder="Passenger Capacity" required>
+        <input type="number" name="luggage" placeholder="Luggage Capacity" required>
+
+        <select name="ac" required>
+            <option value="">A/C Available?</option>
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+
+        <input type="number" step="0.1" name="mileage" placeholder="Mileage (km/L)" required>
+        <input type="text" name="regNumber" placeholder="Vehicle Registration Number" required>
+
+        <button type="submit">Add Vehicle</button>
     </form>
 </div>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const messageDiv = document.getElementById("message");
+    if (params.get("success") === "1") {
+        messageDiv.innerHTML = "<div class='alert'>✅ Vehicle added successfully!</div>";
+    } else if (params.get("error")) {
+        messageDiv.innerHTML = "<div class='error'>❌ Failed to add vehicle. Check fields.</div>";
+    }
+</script>
+
 </body>
 </html>

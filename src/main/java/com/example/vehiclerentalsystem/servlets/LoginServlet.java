@@ -1,17 +1,23 @@
 package com.example.vehiclerentalsystem.servlets;
 
-import com.example.vehiclerentalsystem.classes.User;
+import com.example.vehiclerentalsystem.management.AdminManager;
 import com.example.vehiclerentalsystem.management.UserManagement;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
-    private final UserManagement userManagement = new UserManagement();
+    private AdminManager adminManager;
+    private UserManagement userManager;
+
+    @Override
+    public void init() throws ServletException {
+        adminManager = new AdminManager();
+        userManager = new UserManagement();
+    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -19,17 +25,32 @@ public class LoginServlet extends HttpServlet {
 
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        String role = request.getParameter("role");
 
-        List<User> users = userManagement.getAllUsers();
-        boolean validUser = users.stream()
-                .anyMatch(u -> u.getUsername().equals(username) && u.getPassword().equals(password));
+        if (role == null || username == null || password == null ||
+                role.trim().isEmpty() || username.trim().isEmpty() || password.trim().isEmpty()) {
+            response.sendRedirect("login.jsp?error=emptyFields");
+            return;
+        }
 
-        if (validUser) {
-            HttpSession session = request.getSession();
-            session.setAttribute("username", username);
-            response.sendRedirect("dashboard.jsp");
+        HttpSession session = request.getSession();
+        session.setAttribute("username", username);
+        session.setAttribute("role", role);
+
+        if (role.equals("admin")) {
+            if (adminManager.validateAdmin(username, password)) {
+                response.sendRedirect("adminDashboard.jsp");
+            } else {
+                response.sendRedirect("login.jsp?error=invalidAdmin");
+            }
+        } else if (role.equals("user")) {
+            if (userManager.validateUser(username, password)) {
+                response.sendRedirect("dashboard.jsp");
+            } else {
+                response.sendRedirect("login.jsp?error=invalidUser");
+            }
         } else {
-            response.sendRedirect("login.jsp?error=1");
+            response.sendRedirect("login.jsp?error=invalidRole");
         }
     }
 }

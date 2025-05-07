@@ -12,11 +12,10 @@ public class LogoutServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        HttpSession session = request.getSession(false); // Don't create if doesn't exist
+        HttpSession session = request.getSession(false);
         if (session != null) {
             session.invalidate(); // Invalidate session
         }
-
-        response.sendRedirect("index.html"); // Redirect to public homepage
+        response.sendRedirect("index.html");
     }
 }

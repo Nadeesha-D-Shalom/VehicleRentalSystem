@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manage Users</title>
+  <link rel="stylesheet" href="stylesUsers.css" />
+</head>
+<body>
+  <div class="sidebar">
+    <h1>RentC</h1>
+    <a href="adminDashboard.jsp">Dashboard</a>
+    <a href="dashboard.jsp">Home</a>
+    <a href="manage_cars.html">Manage Cars</a>
+    <a href="manage_users.html">Manage Users</a>
+    <a href="manage_bookings.html">Manage Bookings</a>
+    <a href="index.html">logout</a>
+  </div>
+
+  <div class="main">
+    <div class="top-bar">
+      <span class="admin-label">Manage Users</span>
+      <button class="profile-btn" title="Profile">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="button-group">
+      <button class="active-btn" onclick="filterStatus('Active')">Active</button>
+      <button class="inactive-btn" onclick="filterStatus('Inactive')">Inactive</button>
+      <button class="delete-btn" onclick="deleteSelected()">Delete</button>
+      <button class="new-btn" onclick="addNewRow()">New</button>
+      <button class="export-btn" onclick="exportUsers()">Export All Users</button>
+    </div>
+
+    <h2>Users Details</h2>
+    <table>
+      <thead>
+        <tr>
+          <th><input type="checkbox" onclick="toggleAll(this)"/></th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>ID Proof Status</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="owner-table-body">
+        <!-- Data will be populated here -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    let owners = [
+      {
+        firstName: "John",
+        lastName: "Doe",
+        email: "john@example.com",
+        phone: "0712345678",
+        idProof: "Verified",
+        status: "Active"
+      },
+      {
+        firstName: "Jane",
+        lastName: "Smith",
+        email: "jane@example.com",
+        phone: "0776543210",
+        idProof: "Pending",
+        status: "Inactive"
+      }
+    ];
+
+    let filteredStatus = null;
+
+    function populateTable() {
+      const tableBody = document.getElementById("owner-table-body");
+      tableBody.innerHTML = "";
+
+      const filtered = filteredStatus
+        ? owners.filter(o => o.status === filteredStatus)
+        : owners;
+
+      filtered.forEach((o, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td><input type="checkbox" data-index="${index}"></td>
+          <td>${o.firstName}</td>
+          <td>${o.lastName}</td>
+          <td>${o.email}</td>
+          <td>${o.phone}</td>
+          <td>${o.idProof}</td>
+          <td><span class="status ${o.status}">${o.status}</span></td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+
+    function toggleAll(masterCheckbox) {
+      const checkboxes = document.querySelectorAll('#owner-table-body input[type="checkbox"]');
+      checkboxes.forEach(cb => cb.checked = masterCheckbox.checked);
+    }
+
+    function deleteSelected() {
+      const checkboxes = document.querySelectorAll('#owner-table-body input[type="checkbox"]:checked');
+      const indicesToDelete = Array.from(checkboxes).map(cb => parseInt(cb.dataset.index));
+      owners = owners.filter((_, index) => !indicesToDelete.includes(index));
+      populateTable();
+    }
+
+    function addNewRow() {
+      const firstName = prompt("Enter First Name:");
+      const lastName = prompt("Enter Last Name:");
+      const email = prompt("Enter Email:");
+      const phone = prompt("Enter Phone Number:");
+      const idProof = prompt("Enter ID Proof Status (Verified/Pending):");
+      const status = prompt("Enter Status (Active/Inactive):");
+
+      if (firstName && lastName && email && phone && idProof && status) {
+        owners.push({ firstName, lastName, email, phone, idProof, status });
+        populateTable();
+      } else {
+        alert("Please fill all fields!");
+      }
+    }
+
+    function filterStatus(status) {
+      filteredStatus = status;
+      populateTable();
+    }
+
+    function exportUsers() {
+      let csvContent = "First Name,Last Name,Email,Phone Number,ID Proof Status,Status\n";
+      owners.forEach(o => {
+        csvContent += `${o.firstName},${o.lastName},${o.email},${o.phone},${o.idProof},${o.status}\n`;
+      });
+
+      const blob = new Blob([csvContent], { type: "text/csv" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "car_owners.csv";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+
+    populateTable();
+  </script>
+</body>
+</html>

@@ -35,6 +35,15 @@ public class UserManagement {
         }
     }
 
+    public boolean validateUser(String username, String password) {
+        for (User user : userList) {
+            if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void saveUsers() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             for (User user : userList) {
