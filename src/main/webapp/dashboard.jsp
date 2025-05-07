@@ -51,8 +51,7 @@
 
         <div class="navbar-collapse" id="">
           <div class="user_option">
-                                            <span style="color: white; margin-right: 15px;">Welcome, <%= username %>
-                                                    </span>
+             <span style="color: white; margin-right: 15px;">Welcome, <%= username %></span>
             <form action="logout" method="post" style="display:inline;">
               <button type="submit" class="btn btn-danger">Logout</button>
             </form>
@@ -247,8 +246,8 @@
         </p>
       </div>
       <div class="btn-box">
-        <a href="vehicleListing.jsp" class="btn btn-danger">
-          View Vehicles
+        <a href="vehicleList" class="btn btn-danger">View Vehicles</a>
+
         </a>
       </div>
     </div>
