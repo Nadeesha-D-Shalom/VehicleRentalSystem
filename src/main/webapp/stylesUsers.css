@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #f4f6f8;
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background: #3b0a50;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar h1 {
+  font-size: 22px;
+  margin-bottom: 30px;
+  color: #ff69b4;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 5px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.sidebar a:hover {
+  background: #4b1a60;
+}
+
+.main {
+  flex: 1;
+  padding: 20px;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.admin-label {
+  font-weight: bold;
+  font-size: 18px;
+  color: #3b0a50;
+}
+
+.profile-btn {
+  background: #3b0a50;
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.profile-btn:hover {
+  background: #5e2174;
+}
+
+.profile-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+}
+
+.button-group {
+  margin-bottom: 20px;
+}
+
+.button-group button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  margin-right: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.active-btn { background: #9c27b0; }
+.inactive-btn { background: #607d8b; }
+.delete-btn { background: #f44336; }
+.new-btn { background: #009688; }
+.export-btn { background: #3f51b5; }
+
+table {
+  width: 100%;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background: #f0f0f0;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  color: white;
+}
+
+.status.Active {
+  background: #4caf50;
+}
+
+.status.Inactive {
+  background: #f44336;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 6px;
+  font-size: 14px;
+}
