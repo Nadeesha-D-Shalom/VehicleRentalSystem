@@ -4,12 +4,21 @@ public class User {
     private String username;
     private String password;
     private String phone;
+    public String role;
 
+    // get regular user details
     public User(String username, String password, String phone) {
         this.username = username;
         this.password = password;
         this.phone = phone;
     }
+
+    // get admin details
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
 
     public String getUsername() {
         return username;
@@ -21,6 +30,9 @@ public class User {
 
     public String getPhone() {
         return phone;
+    }
+    public String getRole() {
+        return role;
     }
 
     public static User fromString(String line) {
