@@ -1,15 +1,12 @@
 package com.example.vehiclerentalsystem.classes;
 
-public class Admin {
-    private String username;
-    private String password;
-
+public class Admin extends User {
     public Admin(String username, String password) {
-        this.username = username;
-        this.password = password;
+        super(username, password);
     }
 
-    public String getUsername() { return username; }
-    public String getPassword() { return password; }
+    @Override
+    public String getRole() {
+        return "admin";
+    }
 }
-

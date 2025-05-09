@@ -65,9 +65,11 @@
           </div>
           <div id="myNav" class="overlay">
             <div class="overlay-content">
-              <a href="dashboard.jsp">Dashboard</a>
+              <a href="adminDashboard.jsp">Dashboard</a>
               <a href="about.html">About</a>
               <a></a>
+              <a href="vehicleRegistation.html">Add New Vehicle</a>
+
             </div>
           </div>
         </div>

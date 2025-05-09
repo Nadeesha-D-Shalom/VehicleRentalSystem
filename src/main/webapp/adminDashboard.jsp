@@ -22,7 +22,7 @@
 <div class="sidebar">
   <h1>RentC</h1>
   <a href="adminDashboard.jsp">Dashboard</a>
-  <a href="dashboard.jsp">Home</a>
+  <a href="adminHomePage.jsp">Home</a>
   <a href="manage_cars.html">Manage Cars</a>
   <a href="manage_users.html">Manage Users</a>
   <a href="manage_bookings.html">Manage Bookings</a>
