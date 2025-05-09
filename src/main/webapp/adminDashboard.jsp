@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.io.*, java.util.*" %>
 <%@ page session="true" %>
 <%
   String username = (String) session.getAttribute("username");
@@ -23,9 +24,9 @@
   <h1>RentC</h1>
   <a href="adminDashboard.jsp">Dashboard</a>
   <a href="adminHomePage.jsp">Home</a>
-  <a href="manage_cars.html">Manage Cars</a>
-  <a href="manage_users.html">Manage Users</a>
-  <a href="manage_bookings.html">Manage Bookings</a>
+  <a href="manageBookings">Manage Bookings</a>
+  <a href="manageUsers">Manage Users</a>
+  <a href="manage_cars.jsp">Manage Car</a>
   <a href="index.html" style="color: red;">🚪 Logout</a>
 </div>
 
@@ -63,20 +64,37 @@
       </tr>
       </thead>
       <tbody>
+      <%
+        String filePath = "E:/SLIIT_Bacholer/_1_Year_sem2/OOP_FinalGoupProject/VehicleRentalSystem/acceptedBookings.txt";
+        File file = new File(filePath);
+        if (file.exists()) {
+          try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+              String[] p = line.split(",");
+              if (p.length == 5) {
+      %>
       <tr>
-        <td>EN1501488</td>
-        <td>BMW 320d</td>
-        <td><span class="status-done">Done</span></td>
-        <td>26 Sep 2019</td>
-        <td>Rs.30,000</td>
+        <td><%= p[0] %></td> <!-- Booking ID -->
+        <td><%= p[1] %></td> <!-- Subject (Customer Name) -->
+        <td><span class="status-done"><%= p[2] %></span></td> <!-- Status -->
+        <td><%= p[3] %></td> <!-- Pickup Date -->
+        <td>Rs.<%= p[4] %></td> <!-- Total Price -->
       </tr>
-      <tr>
-        <td>EN1501438</td>
-        <td>Toyota Premio</td>
-        <td><span class="status-progress">Progress</span></td>
-        <td>26 Sep 2019</td>
-        <td>Rs.45,000</td>
-      </tr>
+      <%
+          }
+        }
+      } catch (Exception e) {
+      %>
+      <tr><td colspan="5">Error loading bookings</td></tr>
+      <%
+        }
+      } else {
+      %>
+      <tr><td colspan="5">No recent bookings found.</td></tr>
+      <%
+        }
+      %>
       </tbody>
     </table>
   </div>

@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class AdminManager {
 
-    private static final String FILE_PATH = "E:/SLIIT_Bacholer/_1_Year_sem2/OOP_FinalGoupProject/VehicleRentalSystem/admins.txt"; // looks in the project root
+    private static final String FILE_PATH = "E:/SLIIT_Bacholer/_1_Year_sem2/OOP_FinalGoupProject/VehicleRentalSystem/admins.txt";
 
     public boolean validateAdmin(String username, String password) {
         try (BufferedReader br = new BufferedReader(new FileReader(FILE_PATH))) {
