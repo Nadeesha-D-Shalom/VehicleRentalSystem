@@ -79,7 +79,6 @@
   <!-- end header section -->
 
 
-
   <!-- slider section -->
   <section class=" slider_section position-relative">
     <div class="slider_container">

@@ -36,20 +36,6 @@
     <button class="profile-btn"><i class="fas fa-user-circle"></i></button>
   </div>
 
-  <div class="cards">
-    <div class="card">
-      <h2>71</h2>
-      <p>Total rental cars</p>
-    </div>
-    <div class="card">
-      <h2>23</h2>
-      <p>Total available cars</p>
-    </div>
-    <div class="card">
-      <h2>48</h2>
-      <p>Total car lists</p>
-    </div>
-  </div>
 
   <div class="bookings">
     <h2 style="margin: 20px 0;">Recent Car Bookings</h2>
