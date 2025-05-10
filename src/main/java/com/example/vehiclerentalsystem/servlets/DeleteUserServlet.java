@@ -10,7 +10,7 @@ import java.util.List;
 
 @WebServlet("/DeleteUserServlet")
 public class DeleteUserServlet extends HttpServlet {
-    private static final String USER_FILE = "E:/SLIIT_Bacholer/_1_Year_sem2/OOP_FinalGoupProject/VehicleRentalSystem/user.txt";
+    private static final String USER_FILE = "E:/SLIIT_Bacholer/_1_Year_sem2/OOP_FinalGoupProject/VehicleRentalSystem/user.txt.txt";
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
