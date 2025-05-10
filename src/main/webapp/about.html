@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>About Us | RentC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f0f4f8;
+            color: #333;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1e88e5, #1565c0);
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .about-section {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .about-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #1a237e;
+        }
+
+        .about-section p {
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            padding: 30px;
+            flex: 1 1 280px;
+            max-width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card i {
+            font-size: 36px;
+            color: #1e88e5;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #0d47a1;
+        }
+
+        .card p {
+            font-size: 15px;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .about-section h2 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+
+<section class="hero">
+    <h1>About RentC</h1>
+    <p>Your Trusted Partner in Vehicle Rentals</p>
+</section>
+
+<section class="about-section">
+    <h2>Who We Are</h2>
+    <p>
+        RentC is Sri Lanka's fastest-growing vehicle rental platform, designed to simplify your travel needs.
+        Whether you're planning a road trip, a business journey, or simply need a car for daily use — we connect you to the perfect ride with just a few clicks.
+    </p>
+
+    <h2>Our Mission</h2>
+    <p>
+        To empower every traveler with smart, affordable, and reliable rental services, combining modern technology with customer satisfaction.
+    </p>
+
+    <h2>Why Choose Us?</h2>
+    <div class="cards">
+        <div class="card">
+            <i class="fas fa-car"></i>
+            <h3>Wide Vehicle Range</h3>
+            <p>From budget-friendly cars to luxury SUVs — RentC has it all.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Trusted & Secure</h3>
+            <p>Verified partners, secure payments, and transparent pricing guaranteed.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-headset"></i>
+            <h3>24/7 Support</h3>
+            <p>Our team is always ready to assist you, anytime, anywhere.</p>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

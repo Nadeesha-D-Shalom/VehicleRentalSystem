@@ -7,11 +7,8 @@
     <meta charset="UTF-8">
     <title>Vehicle Listings | RentC</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <!-- Animate.css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
     <style>
         body {
@@ -27,7 +24,6 @@
             font-size: 2.5rem;
             font-weight: 600;
             color: #1a237e;
-            animation: fadeInDown 1s ease;
         }
         .card {
             border: none;
@@ -68,8 +64,11 @@
         .btn-rent:hover {
             background: linear-gradient(135deg, #1976d2, #0d47a1);
         }
-        .alert {
-            animation: fadeIn 1s ease;
+        .badge-status {
+            font-size: 0.85rem;
+            padding: 5px 12px;
+            border-radius: 12px;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -77,8 +76,21 @@
 
 <div class="container">
     <h1 class="animate__animated animate__fadeInDown">🚗 Explore Our Vehicles</h1>
-    <div class="row g-4 row-cols-1 row-cols-md-3">
 
+    <!-- Sorting Dropdown -->
+    <form method="get" action="vehicleList" class="mb-4 text-center">
+        <label for="sortBy" class="me-2 fw-semibold">Sort By:</label>
+        <select name="sortBy" id="sortBy" onchange="this.form.submit()" class="form-select d-inline-block w-auto">
+            <%
+                String sortBy = (String) request.getAttribute("sortBy");
+            %>
+            <option value="">Default</option>
+            <option value="price" <%= "price".equals(sortBy) ? "selected" : "" %>>Price (Low to High)</option>
+            <option value="availability" <%= "availability".equals(sortBy) ? "selected" : "" %>>Availability</option>
+        </select>
+    </form>
+
+    <div class="row g-4 row-cols-1 row-cols-md-3">
         <%
             List<Vehicle> vehicleList = (List<Vehicle>) request.getAttribute("vehicleList");
             if (vehicleList != null && !vehicleList.isEmpty()) {
@@ -96,8 +108,18 @@
                         AC: <%= v.getAc() %><br>
                         Color: <%= v.getColor() %>
                     </p>
+                    <p class="mb-2">
+                        <span class="badge-status <%= "available".equalsIgnoreCase(v.getAvailability()) ? "bg-success text-white" : "bg-danger text-white" %>">
+                            <%= v.getAvailability().toUpperCase() %>
+                        </span>
+                    </p>
                     <p class="price">LKR <%= v.getPrice() %> / day</p>
+
+                    <% if ("available".equalsIgnoreCase(v.getAvailability())) { %>
                     <a href="booking.jsp?regNumber=<%= v.getRegNumber() %>" class="btn btn-rent mt-auto">Rent Now</a>
+                    <% } else { %>
+                    <button class="btn btn-secondary mt-auto" disabled>Not Available</button>
+                    <% } %>
                 </div>
             </div>
         </div>
@@ -111,12 +133,9 @@
             </div>
         </div>
         <% } %>
-
     </div>
 </div>
 
-<!-- Bootstrap JS Bundle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>

@@ -1,3 +1,5 @@
-Toyota;X-trail;SUV;Automatic;Petrol;5200;White;Yes;ES-3599;12000.0;2022;4;5;4;5522000.0;2.jpg
-toyota;Petrol;Hatchback;Manual;Diesel;5200;Black;No;35-7799;15000.0;2004;4;5;8;5999887.0;3.jpg
-Toyota;Vitz;Sedan;Automatic;Petrol;2100;Ash;Yes;CBL-3564;15000.0;2024;4;5;3;8556.0;2.jpg
+Toyota;X-trail;SUV;Automatic;Petrol;5200;White;Yes;ES-3599;12000.0;2022;4;5;4;5522000.0;2.jpg;unavailable
+Toyota;Aqua;Hatchback;Manual;Diesel;5200;Black;No;35-7799;15000.0;2004;4;5;8;5999887.0;3.jpg;available
+Toyota;Vitz;Sedan;Automatic;Petrol;2100;Ash;Yes;CBL-3564;15000.0;2024;4;5;3;8556.0;2.jpg;available
+Toyota;Corolla;Sedan;Manual;Petrol;1700;Gray;Yes;300-9488;9000.0;2004;4;4;4;8856442.0;4.jpg;available
+Honda;Corolla;Convertible;Manual;Diesel;1300;White;No;15-2593;2500.0;1999;5;12;8;6665594.0;6.jpg;available

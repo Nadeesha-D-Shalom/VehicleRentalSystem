@@ -43,7 +43,7 @@
         }
 
         input, select {
-            background: rgba(152, 92, 226, 0.8);
+            background: rgba(255, 255, 255, 0.73);
             color: #000;
         }
 

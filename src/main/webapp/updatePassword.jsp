@@ -17,7 +17,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: url('images/log.jpg') no-repeat center center fixed;
+      background: url('images/logWall.jpg') no-repeat center center fixed;
       background-size: cover;
     }
 

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Contact Us | RentC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #e3f2fd, #bbdefb);
+        }
+
+        .contact-section {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1100px;
+            margin: 60px auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .contact-left, .contact-right {
+            flex: 1;
+            min-width: 300px;
+            padding: 40px;
+        }
+
+        .contact-left {
+            background: #1e88e5;
+            color: white;
+        }
+
+        .contact-left h2 {
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .info-line {
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+
+        .info-line i {
+            margin-right: 12px;
+            font-size: 18px;
+        }
+
+        .contact-right h2 {
+            color: #1a237e;
+            margin-bottom: 20px;
+        }
+
+        .contact-right form input,
+        .contact-right form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        .contact-right form textarea {
+            resize: vertical;
+            height: 120px;
+        }
+
+        .contact-right form button {
+            background-color: #1e88e5;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .contact-right form button:hover {
+            background-color: #1565c0;
+        }
+
+        @media screen and (max-width: 768px) {
+            .contact-section {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="contact-section">
+    <div class="contact-left">
+        <h2>Contact Information</h2>
+        <div class="info-line"><i class="fas fa-location-dot"></i> 123 Main Street, Colombo 07</div>
+        <div class="info-line"><i class="fas fa-envelope"></i> support@rentc.lk</div>
+        <div class="info-line"><i class="fas fa-phone"></i> +94 77 123 4567</div>
+        <div class="info-line"><i class="fas fa-globe"></i> www.rentc.lk</div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -67,7 +67,7 @@
         </select>
         <button type="submit">Login</button>
         <div style="margin-top: 15px; text-align: center;">
-            <p>Not a member? <a href="register.jsp" style="color: #ffffff; text-decoration: none;">Sign up now</a></p>
+            <p>Not a member? <a href="userRegistation.jsp" style="color: #ffffff; text-decoration: none;">Sign up now</a></p>
             <p><a href="index.html" style="color: #ffffff; text-decoration: none;">← Back to Home Page</a></p>
         </div>
 
