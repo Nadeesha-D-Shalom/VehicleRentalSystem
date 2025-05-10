@@ -1,17 +1,25 @@
-Vehicle Rental System – SE1020 OOP Project
+Vehicle Rental System – University Project (SE1020 OOP Module)
 
-Developed a fully functional web-based vehicle rental application as part of the SE1020 Object-Oriented Programming module. The project was implemented using Java, JSP, Servlets, and file handling (no database), deployed on Apache Tomcat. Key features include:
 
-Complete CRUD operations for users, vehicles, bookings, admins, ratings, and packages
+A full-featured JSP-based web application developed as part of a university coursework project to manage vehicle rentals. Built using Java, Servlets, and JSP, the system supports both user and admin functionalities, including user management, vehicle listings, booking processing, package handling, ratings, and availability tracking.
 
-Applied OOP principles: Encapsulation, Inheritance, Polymorphism
+✅ The system is developed entirely using Object-Oriented Programming (OOP) principles, including:
 
-Built responsive user and admin dashboards using HTML, CSS, and Bootstrap
+Encapsulation – All core entities use private fields with public getters/setters
 
-Collaborated with a 6-member team using GitHub for version control
+Abstraction – Business logic and file handling are abstracted in controller/manager classes
 
-Ensured smooth file-based storage with .txt files for user and booking data
+Inheritance – Shared class hierarchies for roles (e.g., User, Admin)
 
-Designed with a minimum of 3 UI pages per user role, supporting both users and admins
+Polymorphism – Overridden methods across management classes for flexible behavior
 
-This project showcases core Java web development skills and the ability to design structured, file-based systems with proper object-oriented architecture.
+Composition – Relationships between vehicles, bookings, and users modeled using composition
+
+Modularity & Reusability – Separated concerns between data models, servlets, managers, and JSP views
+
+📂 Data stored in .txt files using list/queue-based managers (no database)
+🎨 Frontend styled with HTML, CSS, and Bootstrap for a responsive user experience
+🧠 Perfect for learning JSP-based system design, file-handling logic, and implementing complete CRUD operations in a real-world OOP project
+
+🔗 Developed collaboratively by a 6-member team using GitHub for version control and Apache Tomcat for deployment
+
