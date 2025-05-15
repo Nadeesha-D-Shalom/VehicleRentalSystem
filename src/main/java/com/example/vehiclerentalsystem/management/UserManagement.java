@@ -1,5 +1,6 @@
 package com.example.vehiclerentalsystem.management;
 
+import com.example.vehiclerentalsystem.classes.RegularUser;
 import com.example.vehiclerentalsystem.classes.User;
 
 import java.io.*;
@@ -7,9 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserManagement {
-    // Change this to your exact working project path - your working path
     private final String filePath = "E:/SLIIT_Bacholer/_1_Year_sem2/OOP_FinalGoupProject/VehicleRentalSystem/user.txt";
-
     private List<User> userList;
 
     public UserManagement() {
@@ -59,8 +58,8 @@ public class UserManagement {
         return userList.stream().anyMatch(u -> u.getUsername().equalsIgnoreCase(username));
     }
 
-    public void addUser(String username, String password, String phone) {
-        userList.add(new User(username, password, phone));
+    public void addUser(String username, String password, String phone, String NIC) {
+        userList.add(new RegularUser(username, password, phone, NIC));
     }
 
     public List<User> getAllUsers() {
