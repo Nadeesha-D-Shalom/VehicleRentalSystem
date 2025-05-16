@@ -1,6 +1,7 @@
 package com.example.vehiclerentalsystem.management;
 
 import com.example.vehiclerentalsystem.classes.Vehicle;
+
 import java.io.*;
 import java.util.LinkedList;
 import java.util.List;
@@ -41,6 +42,41 @@ public class VehicleManager {
         if (vehicleList.isEmpty()) {
             vehicleList.addAll(loadAllVehicles());
         }
+
+        List<Vehicle> availableVehicles = new LinkedList<>();
+        for (Vehicle v : vehicleList) {
+            if ("available".equalsIgnoreCase(v.getAvailability())) {
+                availableVehicles.add(v);
+            }
+        }
+        return availableVehicles;
+    }
+
+    public static List<Vehicle> getAllVehiclesIncludingUnavailable() {
+        // Optional: if you need admin to see all vehicles
+        if (vehicleList.isEmpty()) {
+            vehicleList.addAll(loadAllVehicles());
+        }
         return new LinkedList<>(vehicleList);
+    }
+
+    public static void updateAvailability(String regNumber, String newStatus) {
+        List<Vehicle> allVehicles = loadAllVehicles();
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH))) {
+            for (Vehicle v : allVehicles) {
+                if (v.getRegNumber().equalsIgnoreCase(regNumber)) {
+                    v.setAvailability(newStatus);
+                }
+                writer.write(v.toString());
+                writer.newLine();
+            }
+        } catch (IOException e) {
+            System.out.println("Error updating vehicle availability: " + e.getMessage());
+        }
+
+        // Sync in-memory list
+        vehicleList.clear();
+        vehicleList.addAll(loadAllVehicles());
     }
 }

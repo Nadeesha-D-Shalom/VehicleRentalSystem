@@ -5,12 +5,10 @@ public class Vehicle {
     private String color, ac, regNumber, imageName;
     private double price, mileage;
     private int year, doors, passengers, luggage;
-    private String description; // Add this if it's not there already
+    private String availability = "available"; // ✅ New field (default)
+    private String description; // optional if used later
 
-    public String getDescription() {
-        return description;
-    }
-
+    // Getters and Setters
     public String getBrand() { return brand; }
     public void setBrand(String brand) { this.brand = brand; }
 
@@ -59,18 +57,24 @@ public class Vehicle {
     public int getLuggage() { return luggage; }
     public void setLuggage(int luggage) { this.luggage = luggage; }
 
+    public String getAvailability() { return availability; }  // ✅ Getter
+    public void setAvailability(String availability) { this.availability = availability; } // ✅ Setter
+
+    public String getDescription() { return description; }
+    public void setDescription(String description) { this.description = description; }
+
     @Override
     public String toString() {
         return brand + ";" + model + ";" + vehicleType + ";" + transmission + ";" + fuelType + ";" +
                 engine + ";" + color + ";" + ac + ";" + regNumber + ";" + price + ";" + year + ";" +
-                doors + ";" + passengers + ";" + luggage + ";" + mileage + ";" + imageName;
+                doors + ";" + passengers + ";" + luggage + ";" + mileage + ";" + imageName + ";" + availability;
     }
 
     public static Vehicle fromString(String line) {
         try {
             String[] parts = line.split(";", -1);
-            if (parts.length != 16) {
-                System.out.println("Skipping invalid line (wrong field count): " + line);
+            if (parts.length != 17) {
+                System.out.println("Invalid line format: " + line);
                 return null;
             }
 
@@ -91,12 +95,11 @@ public class Vehicle {
             v.setLuggage(Integer.parseInt(parts[13]));
             v.setMileage(Double.parseDouble(parts[14]));
             v.setImageName(parts[15]);
+            v.setAvailability(parts[16]); // ✅ Parse status
 
             return v;
-
         } catch (Exception e) {
-            System.out.println("Error parsing vehicle from line: " + line);
-            e.printStackTrace();
+            System.out.println("Error reading vehicle: " + e.getMessage());
             return null;
         }
     }
