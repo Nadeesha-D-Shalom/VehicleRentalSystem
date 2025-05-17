@@ -5,7 +5,7 @@ public class Vehicle {
     private String color, ac, regNumber, imageName;
     private double price, mileage;
     private int year, doors, passengers, luggage;
-    private String availability = "available"; // ✅ New field (default)
+    private String availability = "available"; 
     private String description; // optional if used later
 
     // Getters and Setters
