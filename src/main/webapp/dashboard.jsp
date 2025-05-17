@@ -214,9 +214,8 @@
             About Our Cars
           </h2>
           <p>
-            It is a long established fact that a reader will be distracted by the
-            readable content of a page when looking at its layout. The point of using
-            Lorem
+            Cars That Fit Every Drive
+            We provide reliable, comfortable, and well-maintained cars that are ready for any journey. Whether it’s for daily commutes or weekend adventures, we’ve got you covered.
           </p>
         </div>
       </div>
@@ -262,7 +261,8 @@
         Our Latest Blog
       </h2>
       <p>
-        It is a long established fact that a reader will be distracted by the
+        News, Tips & Auto Trends
+        Stay updated with car news, maintenance tips, driving guides, and everything automotive. Fresh content to help you drive smart.
       </p>
     </div>
   </div>
