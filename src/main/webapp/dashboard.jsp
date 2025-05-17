@@ -149,7 +149,7 @@
         Better Way For Find Your Favourite Cars
       </h2>
       <p>
-        It is a long established fact that a reader will be distracted by the readable
+        A Smarter Way to Discover Your Dream Car
       </p>
     </div>
     <div class="car_container">
@@ -162,8 +162,7 @@
             Choose Your Car
           </h5>
           <p>
-            It is a long established fact that a reader will be distracted by the
-            readable content of a page when
+            Browse through our wide range of vehicles and pick the one that suits your needs, lifestyle, and budget.
           </p>
         </div>
       </div>
