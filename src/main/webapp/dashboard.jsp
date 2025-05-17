@@ -175,8 +175,7 @@
             Get Your Car
           </h5>
           <p>
-            It is a long established fact that a reader will be distracted by the
-            readable content of a page when
+            Enjoy a smooth booking process with fast delivery or pickup. No long waits or hidden steps.
           </p>
         </div>
       </div>
@@ -189,8 +188,7 @@
             Contact Your Dealer
           </h5>
           <p>
-            It is a long established fact that a reader will be distracted by the
-            readable content of a page when
+            Need help or have questions? Our friendly dealers are just a call or message away.
           </p>
         </div>
       </div>
