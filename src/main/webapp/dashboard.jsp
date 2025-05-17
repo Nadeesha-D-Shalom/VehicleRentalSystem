@@ -285,8 +285,7 @@
                   Vintage
                 </h5>
                 <p>
-                  It is a long established fact that a reader will be distracted
-                  by the readable The point of using Lorem </p>
+                  A glamorous woman dressed in retro fashion sits behind the wheel of a vintage car. Her white scarf, chic sunglasses, and floral pastel outfit perfectly evoke a timeless era. The background bursts with natural light and greenery, enhancing the nostalgic vibe. </p>
               </div>
             </div>
           </div>
@@ -305,8 +304,7 @@
                   Steering wheels
                 </h5>
                 <p>
-                  It is a long established fact that a reader will be distracted
-                  by the readable The point of using Lorem </p>
+                  A nearly identical shot to Card 1, this image again highlights the elegance of the Mercedes-Benz interior. The luxury and comfort are accentuated by ambient lighting and the refined texture of the wheel and dashboard. </p>
               </div>
             </div>
           </div>
@@ -345,8 +343,7 @@
                   Steering wheels
                 </h5>
                 <p>
-                  It is a long established fact that a reader will be distracted
-                  by the readable The point of using Lorem </p>
+                  A luxurious Mercedes-Benz AMG steering wheel dominates the interior view, framed by a polished dashboard and a modern digital display cluster. The hand gripping the wheel is stylishly dressed with a silver watch and a dark blue sleeve, adding a touch of elegance. </p>
               </div>
             </div>
           </div>
