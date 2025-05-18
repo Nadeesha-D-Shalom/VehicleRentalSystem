@@ -6,7 +6,7 @@ import java.io.*;
 import java.util.UUID;
 
 public class BookingManager {
-    private static final String FILE_PATH = "E:/SLIIT_Bacholer/_1_Year_sem2/OOP_FinalGoupProject/VehicleRentalSystem/rented.txt";
+    private static final String FILE_PATH = "E:/SLIIT_Bacholer/_1_Year_sem2/OOP_FinalGoupProject/VehicleRentalProject/rented.txt";
 
     public BookingManager() {
         File file = new File(FILE_PATH);
