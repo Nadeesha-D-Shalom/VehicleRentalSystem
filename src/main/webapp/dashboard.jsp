@@ -75,7 +75,7 @@
     </div>
   </header>
   <!-- end header section -->
-  
+
 
   <!-- slider section -->
   <section class=" slider_section position-relative">
@@ -140,6 +140,46 @@
 </div>
 
 <!-- car section -->
+<!-- best section -->
+
+<section class="best_section">
+  <div class="container">
+    <div class="book_now">
+      <div class="detail-box">
+        <h2>
+          Our Best Cars Click to view Vehicles
+        </h2>
+        <p>
+
+        </p>
+      </div>
+      <div class="btn-box">
+        <a href="vehicleList" class="btn btn-danger">View Vehicles</a>
+
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- end best section -->
+
+<!-- promotions section -->
+<section class="promotion_section layout_padding">
+  <div class="container">
+    <div class="heading_container">
+      <h2>
+        🎁 Special Offers Just for You
+      </h2>
+      <p>Check out our current promotions and save big on your next rental.</p>
+    </div>
+    <div class="text-center mt-4">
+      <a href="promotions" class="btn btn-success">View All Promotions</a>
+    </div>
+  </div>
+</section>
+<!-- end promotions section -->
+
 
 <section class="car_section layout_padding2-top layout_padding-bottom">
   <div class="container">
@@ -223,33 +263,6 @@
 </section>
 
 <!-- end about section -->
-
-
-<!-- best section -->
-
-<section class="best_section">
-  <div class="container">
-    <div class="book_now">
-      <div class="detail-box">
-        <h2>
-          Our Best Cars Click to view Vehicles
-        </h2>
-        <p>
-
-        </p>
-      </div>
-      <div class="btn-box">
-        <a href="vehicleList" class="btn btn-danger">View Vehicles</a>
-
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- end best section -->
-
-
 
 <!-- blog section -->
 
@@ -413,6 +426,7 @@
 </section>
 
 <!-- end us section -->
+
 
 <!-- client section -->
 

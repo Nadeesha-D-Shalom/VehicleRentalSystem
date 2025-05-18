@@ -1,6 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.example.vehiclerentalsystem.classes.Vehicle" %>
+<%@ page import="com.example.vehiclerentalsystem.management.FeedbackManager" %>
+<%@ page import="java.lang.StringBuilder" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -93,8 +95,13 @@
     <div class="row g-4 row-cols-1 row-cols-md-3">
         <%
             List<Vehicle> vehicleList = (List<Vehicle>) request.getAttribute("vehicleList");
+            FeedbackManager feedbackManager = new FeedbackManager();
+
             if (vehicleList != null && !vehicleList.isEmpty()) {
                 for (Vehicle v : vehicleList) {
+                    double avgRating = feedbackManager.getAverageRatingForVehicle(v.getRegNumber());
+                    int fullStars = (int) avgRating;
+                    boolean halfStar = avgRating - fullStars >= 0.5;
         %>
         <div class="col animate__animated animate__fadeInUp">
             <div class="card h-100">
@@ -113,12 +120,27 @@
                             <%= v.getAvailability().toUpperCase() %>
                         </span>
                     </p>
+
+                    <!-- ⭐ Dynamic Rating Display -->
+                    <p class="mb-2">
+                        <%
+                            StringBuilder stars = new StringBuilder();
+                            for (int i = 0; i < fullStars; i++) stars.append("⭐");
+                            if (halfStar) stars.append("✩");
+                            for (int i = fullStars + (halfStar ? 1 : 0); i < 5; i++) stars.append("☆");
+                            stars.append(" (" + String.format("%.1f", avgRating) + " avg)");
+                            out.print(stars.toString());
+                        %>
+                    </p>
+
                     <p class="price">LKR <%= v.getPrice() %> / day</p>
 
                     <% if ("available".equalsIgnoreCase(v.getAvailability())) { %>
-                    <a href="booking.jsp?regNumber=<%= v.getRegNumber() %>" class="btn btn-rent mt-auto">Rent Now</a>
+                    <a href="booking.jsp?regNumber=<%= v.getRegNumber() %>" class="btn btn-rent mb-2">Rent Now</a>
+                    <a href="feedbackForm.jsp?regNumber=<%= v.getRegNumber() %>" class="btn btn-outline-primary">Leave Feedback</a>
                     <% } else { %>
-                    <button class="btn btn-secondary mt-auto" disabled>Not Available</button>
+                    <button class="btn btn-secondary mb-2" disabled>Not Available</button>
+                    <a href="feedbackForm.jsp?regNumber=<%= v.getRegNumber() %>" class="btn btn-outline-primary">Leave Feedback</a>
                     <% } %>
                 </div>
             </div>
