@@ -26,7 +26,10 @@
   <a href="adminHomePage.jsp">Home</a>
   <a href="manageBookings">Manage Bookings</a>
   <a href="manageUsers">Manage Users</a>
-  <a href="manage_cars.jsp">Manage Car</a>
+  <a href="manageCars">Manage Car</a>
+  <a href="manageFeedback">Manage Feedback</a>
+  <a href="manage_promotions.jsp">Manage Promotions</a>
+  <a href="manageAdmins">Manage Admins</a>
   <a href="index.html" style="color: red;">🚪 Logout</a>
 </div>
 
@@ -35,7 +38,6 @@
     <span class="admin-label">Welcome, <%= username %> 👑</span>
     <button class="profile-btn"><i class="fas fa-user-circle"></i></button>
   </div>
-
 
   <div class="bookings">
     <h2 style="margin: 20px 0;">Recent Car Bookings</h2>
@@ -61,11 +63,11 @@
               if (p.length == 5) {
       %>
       <tr>
-        <td><%= p[0] %></td> <!-- Booking ID -->
-        <td><%= p[1] %></td> <!-- Subject (Customer Name) -->
-        <td><span class="status-done"><%= p[2] %></span></td> <!-- Status -->
-        <td><%= p[3] %></td> <!-- Pickup Date -->
-        <td>Rs.<%= p[4] %></td> <!-- Total Price -->
+        <td><%= p[0] %></td>
+        <td><%= p[1] %></td>
+        <td><span class="status-done"><%= p[2] %></span></td>
+        <td><%= p[3] %></td>
+        <td>Rs.<%= p[4] %></td>
       </tr>
       <%
           }
