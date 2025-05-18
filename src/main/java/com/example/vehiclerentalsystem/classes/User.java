@@ -18,6 +18,22 @@ public class User {
     public String getPhone() { return phone; }
     public String getNIC() { return NIC; }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public void setNIC(String NIC) {
+        this.NIC = NIC;
+    }
+
     public String getRole() {
         return "unknown";
     }
