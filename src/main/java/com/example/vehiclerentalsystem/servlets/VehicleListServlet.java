@@ -7,7 +7,6 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 
 import java.io.IOException;
-import java.util.Comparator;
 import java.util.List;
 
 @WebServlet("/vehicleList")
@@ -16,17 +15,11 @@ public class VehicleListServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        List<Vehicle> vehicles = VehicleManager.getAllVehiclesIncludingUnavailable(); // Show all vehicles
-
         String sortBy = request.getParameter("sortBy");
-        if ("price".equalsIgnoreCase(sortBy)) {
-            vehicles.sort(Comparator.comparingDouble(Vehicle::getPrice));
-        } else if ("availability".equalsIgnoreCase(sortBy)) {
-            vehicles.sort(Comparator.comparing(Vehicle::getAvailability)); // alphabetic sort
-        }
+        List<Vehicle> vehicles = VehicleManager.getAllVehiclesSorted(sortBy);
 
         request.setAttribute("vehicleList", vehicles);
-        request.setAttribute("sortBy", sortBy); // Send sort selection back
+        request.setAttribute("sortBy", sortBy);
         request.getRequestDispatcher("vehicleListing.jsp").forward(request, response);
     }
 }

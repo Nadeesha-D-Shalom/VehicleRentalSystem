@@ -17,7 +17,7 @@
   <a href="adminHomePage.jsp">Home</a>
   <a href="manageBookings">Manage Bookings</a>
   <a href="manageUsers">Manage Users</a>
-  <a href="manage_cars.jsp">Manage Car</a>
+  <a href="manageCars">Manage Car</a>
   <a href="index.html">Logout</a>
 </div>
 
@@ -51,7 +51,7 @@
     </thead>
     <tbody>
     <%
-      List<Vehicle> vehicleList = VehicleManager.getAllVehiclesIncludingUnavailable();
+      List<Vehicle> vehicleList = VehicleManager.getAllVehiclesSorted("availability");
       for (Vehicle v : vehicleList) {
     %>
     <tr>

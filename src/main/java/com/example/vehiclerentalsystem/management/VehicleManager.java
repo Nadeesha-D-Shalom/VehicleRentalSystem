@@ -3,15 +3,15 @@ package com.example.vehiclerentalsystem.management;
 import com.example.vehiclerentalsystem.classes.Vehicle;
 
 import java.io.*;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 public class VehicleManager {
     private static final String FILE_PATH = "E:/SLIIT_Bacholer/_1_Year_sem2/OOP_FinalGoupProject/VehicleRentalSystem/vehicle.txt";
-    private static final LinkedList<Vehicle> vehicleList = new LinkedList<>();
+    private static final VehicleLinkedList vehicleList = new VehicleLinkedList();
 
     public static void addVehicle(Vehicle vehicle) {
-        vehicleList.add(vehicle);
+        vehicleList.addVehicle(vehicle);
         saveToFile(vehicle);
     }
 
@@ -25,7 +25,7 @@ public class VehicleManager {
     }
 
     public static List<Vehicle> loadAllVehicles() {
-        LinkedList<Vehicle> list = new LinkedList<>();
+        List<Vehicle> list = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(FILE_PATH))) {
             String line;
             while ((line = reader.readLine()) != null) {
@@ -38,26 +38,27 @@ public class VehicleManager {
         return list;
     }
 
-    public static List<Vehicle> getAllVehicles() {
-        if (vehicleList.isEmpty()) {
-            vehicleList.addAll(loadAllVehicles());
+    public static List<Vehicle> getAllVehiclesSorted(String sortBy) {
+        vehicleList.clear();
+        List<Vehicle> rawList = loadAllVehicles();
+
+        for (Vehicle v : rawList) {
+            vehicleList.addVehicle(v);
         }
 
-        List<Vehicle> availableVehicles = new LinkedList<>();
-        for (Vehicle v : vehicleList) {
-            if ("available".equalsIgnoreCase(v.getAvailability())) {
-                availableVehicles.add(v);
-            }
+        if ("price".equalsIgnoreCase(sortBy)) {
+            vehicleList.selectionSortByRentPrice();
+        } else if ("availability".equalsIgnoreCase(sortBy)) {
+            vehicleList.selectionSortByAvailability();
         }
-        return availableVehicles;
+
+        List<Vehicle> sortedList = new ArrayList<>();
+        vehicleList.forEach(sortedList::add);
+        return sortedList;
     }
 
     public static List<Vehicle> getAllVehiclesIncludingUnavailable() {
-        // Optional: if you need admin to see all vehicles
-        if (vehicleList.isEmpty()) {
-            vehicleList.addAll(loadAllVehicles());
-        }
-        return new LinkedList<>(vehicleList);
+        return loadAllVehicles(); // Optional: for admin view
     }
 
     public static void updateAvailability(String regNumber, String newStatus) {
@@ -75,8 +76,9 @@ public class VehicleManager {
             System.out.println("Error updating vehicle availability: " + e.getMessage());
         }
 
-        // Sync in-memory list
         vehicleList.clear();
-        vehicleList.addAll(loadAllVehicles());
+        for (Vehicle v : loadAllVehicles()) {
+            vehicleList.addVehicle(v);
+        }
     }
 }

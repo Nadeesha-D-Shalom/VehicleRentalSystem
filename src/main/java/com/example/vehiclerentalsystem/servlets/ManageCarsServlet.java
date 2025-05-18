@@ -15,9 +15,8 @@ public class ManageCarsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        List<Vehicle> vehicles = VehicleManager.getAllVehiclesIncludingUnavailable();
+        List<Vehicle> vehicles = VehicleManager.getAllVehiclesSorted("availability");
         request.setAttribute("vehicles", vehicles);
-
         request.getRequestDispatcher("manage_cars.jsp").forward(request, response);
     }
 }
