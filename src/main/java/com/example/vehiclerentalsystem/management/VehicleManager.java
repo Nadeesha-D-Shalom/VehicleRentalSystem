@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class VehicleManager {
-    private static final String FILE_PATH = "E:/SLIIT_Bacholer/_1_Year_sem2/OOP_FinalGoupProject/VehicleRentalSystem/vehicle.txt";
+    private static final String FILE_PATH = "E:/SLIIT_Bacholer/_1_Year_sem2/OOP_FinalGoupProject/VehicleRentalProject/vehicle.txt";
     private static final VehicleLinkedList vehicleList = new VehicleLinkedList();
 
     public static void addVehicle(Vehicle vehicle) {
