@@ -323,8 +323,7 @@
                   Buick Car
                 </h5>
                 <p>
-                  It is a long established fact that a reader will be distracted
-                  by the readable The point of using Lorem </p>
+                  A classic blue Buick with a white roof shines against a modern backdrop. Chrome accents, whitewall tires, and side portholes add vintage charm, set against a clean road and bright sky with blurred city elements behind. </p>
               </div>
             </div>
           </div>
@@ -364,7 +363,7 @@
         Why choose Us
       </h2>
       <p>
-        It is a long established fact that a reader will be distracted by the
+        We Go the Extra Mile
       </p>
     </div>
   </div>
@@ -425,7 +424,8 @@
         What Is say Customer
       </h2>
       <p>
-        It is a long established fact that a reader will be distracted by the
+        Loved by Our Customers
+        Don’t just take our word for it. Hear what real customers say about their experience with Rent C. Reliable service. Happy drivers.
       </p>
     </div>
     <div class="layout_padding2-top">
@@ -435,11 +435,7 @@
             <div class="box">
               <div class="detail-box">
                 <p>
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem It is a long established fact that a
-                  reader will be distracted by the readable content of a page when
-                  looking at its layout. The point of using Lorem
+                  "I had a fantastic experience with Rent C. The booking was easy and the car was in perfect condition. I’ll definitely use this service again!"
                 </p>
               </div>
               <div class="client_id">
@@ -449,7 +445,7 @@
                 </div>
                 <div class="name">
                   <h6>
-                    Established
+                    Jerad
                   </h6>
                   <p>
                     by the readable
@@ -462,11 +458,7 @@
             <div class="box">
               <div class="detail-box">
                 <p>
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem It is a long established fact that a
-                  reader will be distracted by the readable content of a page when
-                  looking at its layout. The point of using Lorem
+                  "This was my first time using Rent C, and it won’t be my last. The vehicle was clean and ran perfectly. I had a stress-free journey thanks to their great service."
                 </p>
               </div>
               <div class="client_id">
@@ -476,7 +468,7 @@
                 </div>
                 <div class="name">
                   <h6>
-                    Blished
+                    Chethana
                   </h6>
                   <p>
                     by the readable
@@ -489,11 +481,7 @@
             <div class="box">
               <div class="detail-box">
                 <p>
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem It is a long established fact that a
-                  reader will be distracted by the readable content of a page when
-                  looking at its layout. The point of using Lorem
+                  "Really impressed with how quickly I was able to get my car. It drove smoothly and had no issues. Will be renting again soon!"
                 </p>
               </div>
               <div class="client_id">
@@ -503,7 +491,7 @@
                 </div>
                 <div class="name">
                   <h6>
-                    Establi
+                    Nadeesha
                   </h6>
                   <p>
                     by the readable
@@ -516,11 +504,7 @@
             <div class="box">
               <div class="detail-box">
                 <p>
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem It is a long established fact that a
-                  reader will be distracted by the readable content of a page when
-                  looking at its layout. The point of using Lorem
+                  "Rent C made my trip so much better. The car was in great condition and perfect for long drives. I’ll recommend this to my friends for sure.
                 </p>
               </div>
               <div class="client_id">
@@ -530,7 +514,7 @@
                 </div>
                 <div class="name">
                   <h6>
-                    Establi
+                    Kavindu
                   </h6>
                   <p>
                     by the readable
