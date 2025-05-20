@@ -37,7 +37,6 @@ public class LoginServlet extends HttpServlet {
         session.setAttribute("username", username);
         session.setAttribute("role", role);
 
-        // ✅ Corrected role condition
         if (role.equals("admin")) {
             if (adminManager.validateAdmin(username, password)) {
                 response.sendRedirect("adminDashboard.jsp");

@@ -5,8 +5,8 @@ public class Vehicle {
     private String color, ac, regNumber, imageName;
     private double price, mileage;
     private int year, doors, passengers, luggage;
-    private String availability = "available"; // ✅ New field (default)
-    private String description; // optional if used later
+    private String availability = "available";
+    private String description;
 
     // Getters and Setters
     public String getBrand() { return brand; }
@@ -57,8 +57,8 @@ public class Vehicle {
     public int getLuggage() { return luggage; }
     public void setLuggage(int luggage) { this.luggage = luggage; }
 
-    public String getAvailability() { return availability; }  // ✅ Getter
-    public void setAvailability(String availability) { this.availability = availability; } // ✅ Setter
+    public String getAvailability() { return availability; }
+    public void setAvailability(String availability) { this.availability = availability; }
 
     public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }
@@ -95,7 +95,7 @@ public class Vehicle {
             v.setLuggage(Integer.parseInt(parts[13]));
             v.setMileage(Double.parseDouble(parts[14]));
             v.setImageName(parts[15]);
-            v.setAvailability(parts[16]); // ✅ Parse status
+            v.setAvailability(parts[16]);
 
             return v;
         } catch (Exception e) {

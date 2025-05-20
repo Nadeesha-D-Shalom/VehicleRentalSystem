@@ -43,18 +43,18 @@ public class Booking {
                 pickupDate + "," + dropoffDate + "," + pickupLocation + "," + dropoffLocation;
     }
 
-    // ✅ Getter methods
+
     public String getBookingId() { return bookingId; }
     public String getFirstName() { return firstName; }
     public String getLastName() { return lastName; }
     public int getAge() { return age; }
     public String getEmail() { return email; }
     public String getPhone() { return phone; }
-    public String getAddress1() { return address1; }
-    public String getAddress2() { return address2; }
-    public String getCity() { return city; }
-    public String getState() { return state; }
-    public String getZip() { return zip; }
+//    public String getAddress1() { return address1; }
+//    public String getAddress2() { return address2; }
+//    public String getCity() { return city; }
+//    public String getState() { return state; }
+//    public String getZip() { return zip; }
     public String getPickupDate() { return pickupDate; }
     public String getDropoffDate() { return dropoffDate; }
     public String getPickupLocation() { return pickupLocation; }
