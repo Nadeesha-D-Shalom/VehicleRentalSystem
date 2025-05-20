@@ -30,12 +30,12 @@
   <a href="manageFeedback">Manage Feedback</a>
   <a href="manage_promotions.jsp">Manage Promotions</a>
   <a href="manageAdmins">Manage Admins</a>
-  <a href="index.html" style="color: red;">🚪 Logout</a>
+  <a href="index.html" style="color: red;"> Logout</a>
 </div>
 
 <div class="main">
   <div class="top-bar">
-    <span class="admin-label">Welcome, <%= username %> 👑</span>
+    <span class="admin-label">Welcome, <%= username %> </span>
     <button class="profile-btn"><i class="fas fa-user-circle"></i></button>
   </div>
 
