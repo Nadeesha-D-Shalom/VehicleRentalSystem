@@ -38,7 +38,7 @@ public class VehicleRegistrationServlet extends HttpServlet {
             vehicle.setImageName(random + ".jpg");
 
             VehicleManager.addVehicle(vehicle);
-            response.sendRedirect("dashboard.jsp");
+            response.sendRedirect("adminDashboard.jsp");
 
         } catch (Exception e) {
             e.printStackTrace();

@@ -21,14 +21,18 @@
   <link rel="stylesheet" href="stylesUsers.css" />
 </head>
 <body>
+
 <div class="sidebar">
   <h1>RentC</h1>
   <a href="adminDashboard.jsp">Dashboard</a>
   <a href="adminHomePage.jsp">Home</a>
   <a href="manageBookings">Manage Bookings</a>
   <a href="manageUsers">Manage Users</a>
-  <a href="manage_cars.jsp">Manage Cars</a>
-  <a href="index.html">Logout</a>
+  <a href="manageCars">Manage Car</a>
+  <a href="manageFeedback">Manage Feedback</a>
+  <a href="manage_promotions.jsp">Manage Promotions</a>
+  <a href="manageAdmins">Manage Admins</a>
+  <a href="index.html" style="color: red;">🚪 Logout</a>
 </div>
 
 <div class="main">

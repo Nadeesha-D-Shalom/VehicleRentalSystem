@@ -1,1 +1,2 @@
 Vehicle Combp,2025-05-21,2025-05-30,10,Get this 
+Test promotion ,2025-05-23,2025-05-26,12,this is test promotion

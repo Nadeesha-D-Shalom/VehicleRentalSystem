@@ -10,7 +10,7 @@ import java.util.List;
 
 @WebServlet("/UpdatePasswordServlet")
 public class UpdatePasswordServlet extends HttpServlet {
-    private static final String USER_FILE = "E:/SLIIT_Bacholer/_1_Year_sem2/OOP_FinalGoupProject/VehicleRentalSystem/user.txt.txt";
+    private static final String USER_FILE = "E:/SLIIT_Bacholer/_1_Year_sem2/OOP_FinalGoupProject/VehicleRentalProject/user.txt";
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -19,41 +19,48 @@ public class UpdatePasswordServlet extends HttpServlet {
         HttpSession session = request.getSession(false);
         String username = (String) session.getAttribute("username");
 
-        String oldPassword = request.getParameter("oldPassword");
-        String newPassword = request.getParameter("newPassword");
-        String confirmPassword = request.getParameter("confirmPassword");
+        String oldPassword = request.getParameter("oldPassword").trim();
+        String newPassword = request.getParameter("newPassword").trim();
+        String confirmPassword = request.getParameter("confirmPassword").trim();
 
         if (!newPassword.equals(confirmPassword)) {
             response.sendRedirect("updatePassword.jsp?error=Password+confirmation+does+not+match");
             return;
         }
 
-        List<String> users = new ArrayList<>();
+        List<String> updatedUsers = new ArrayList<>();
         boolean updated = false;
 
         try (BufferedReader reader = new BufferedReader(new FileReader(USER_FILE))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(",");
-                if (parts.length >= 3 && parts[0].equals(username) && parts[1].trim().equals(oldPassword.trim())) {
-                    // Match found, update password
-                    parts[1] = newPassword;
-                    String updatedLine = String.join(",", parts);
-                    users.add(updatedLine);
-                    updated = true;
+
+                if (parts.length >= 4) {
+                    String fileUsername = parts[0].trim();
+                    String filePassword = parts[1].trim();
+
+                    if (fileUsername.equals(username) && filePassword.equals(oldPassword)) {
+                        parts[1] = newPassword; // Update password
+                        updatedUsers.add(String.join(",", parts));
+                        updated = true;
+                    } else {
+                        updatedUsers.add(line);
+                    }
                 } else {
-                    users.add(line);
+                    updatedUsers.add(line);
                 }
             }
         }
 
         if (updated) {
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(USER_FILE))) {
-                for (String u : users) {
+                for (String u : updatedUsers) {
                     writer.write(u);
                     writer.newLine();
                 }
             }
+            session.invalidate();
             response.sendRedirect("login.jsp");
         } else {
             response.sendRedirect("updatePassword.jsp?error=Incorrect+old+password");

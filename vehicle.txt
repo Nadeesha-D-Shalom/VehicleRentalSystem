@@ -3,3 +3,4 @@ Toyota;Aqua;Hatchback;Manual;Diesel;5200;Black;No;35-7799;15000.0;2004;4;5;8;599
 Toyota;Vitz;Sedan;Automatic;Petrol;2100;Ash;Yes;CBL-3564;15000.0;2024;4;5;3;8556.0;2.jpg;available
 Toyota;Corolla;Sedan;Manual;Petrol;1700;Gray;Yes;300-9488;9000.0;2004;4;4;4;8856442.0;4.jpg;available
 Honda;Corolla;Convertible;Manual;Diesel;1300;White;No;15-2593;2500.0;1999;5;12;8;6665594.0;6.jpg;available
+Nissan;Petrol;SUV;Manual;Diesel;2100;Black;Yes;45-5599;20000.0;2001;4;4;5;5.546222E7;6.jpg;available

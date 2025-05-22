@@ -35,6 +35,7 @@ public class UserManagement {
     }
 
     public boolean validateUser(String username, String password) {
+        loadUsers();
         for (User user : userList) {
             if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
                 return true;

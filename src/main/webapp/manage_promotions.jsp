@@ -72,7 +72,8 @@
   <a href="manageCars">Manage Car</a>
   <a href="manageFeedback">Manage Feedback</a>
   <a href="manage_promotions.jsp">Manage Promotions</a>
-  <a href="index.html" style="color: red;">Logout</a>
+  <a href="manageAdmins">Manage Admins</a>
+  <a href="index.html" style="color: red;">🚪 Logout</a>
 </div>
 
 <div class="main">
