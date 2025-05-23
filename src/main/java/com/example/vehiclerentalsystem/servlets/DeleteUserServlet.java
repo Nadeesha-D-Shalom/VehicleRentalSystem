@@ -29,7 +29,7 @@ public class DeleteUserServlet extends HttpServlet {
                 String[] parts = line.split(",");
                 if (parts.length >= 2 && parts[0].equals(username) && parts[1].equals(inputPassword)) {
                     deleted = true;
-                    continue; // skip this line
+                    continue;
                 }
                 users.add(line);
             }

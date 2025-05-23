@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FeedbackManager {
-    private static final String FILE_PATH = "E:/SLIIT_Bacholer/_1_Year_sem2/OOP_FinalGoupProject/VehicleRentalSystem/feedback.txt";
+    private static final String FILE_PATH = "E:/SLIIT_Bacholer/_1_Year_sem2/OOP_FinalGoupProject/VehicleRentalProject/feedback.txt";
 
     public void addFeedback(Feedback feedback) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH, true))) {

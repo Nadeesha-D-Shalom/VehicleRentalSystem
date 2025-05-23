@@ -18,7 +18,7 @@
     <a href="manageBookings">Manage Bookings</a>
     <a href="manageUsers">Manage Users</a>
     <a href="manageCars">Manage Car</a>
-    <a href="manageFeedback">Manage Feedback</a>
+    <a href="manage_feedback.jsp">Manage Feedback</a>
     <a href="manage_promotions.jsp">Manage Promotions</a>
     <a href="manageAdmins">Manage Admins</a>
     <a href="index.html" style="color: red;">🚪 Logout</a>
