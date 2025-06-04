@@ -58,7 +58,7 @@ public class VehicleManager {
     }
 
     public static List<Vehicle> getAllVehiclesIncludingUnavailable() {
-        return loadAllVehicles(); // Optional: for admin view still not working
+        return loadAllVehicles();
     }
 
     public static void updateAvailability(String regNumber, String newStatus) {
